@@ -43,6 +43,10 @@ Quick Start
     + http://avnpc.com/pages/writing-best-documentation-by-sphinx-github-readthedocs
     + http://docs.readthedocs.org/en/latest/getting_started.html
 
+    |
+    | Push到github时，让Read the Docs 自动更新:
+    | github 的repo页面，选择 settings tabpage，选择
+    | Webhooks & Services => Add service => ReadTheDocs => Active
 
 #. markdown/reStructureText等格式转换
 
