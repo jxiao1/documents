@@ -3,6 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+.. glob attribute is to support file pattern, e.g. docs/python/python_*
+
 Welcome to junxian's documentation!
 =======================================
 
@@ -12,7 +14,7 @@ Welcome to junxian's documentation!
    :numbered:
    :glob:
 
-   docs/python/python_*
+   docs/python/python_interview
 
 
 .. toctree::
@@ -21,7 +23,8 @@ Welcome to junxian's documentation!
    :numbered:
    :glob:
 
-   docs/shell/shell_*
+   docs/shell/shell_variables
+   docs/shell/shell_compare
 
 
 .. toctree::
@@ -30,5 +33,5 @@ Welcome to junxian's documentation!
    :numbered:
    :glob:
 
-   docs/markup/markup_*
+   docs/markup/markup_sphinx
 
