@@ -26,6 +26,7 @@ Welcome to junxian's documentation!
    docs/shell/shell_variables
    docs/shell/shell_compare
    docs/shell/shell_terminal
+   docs/shell/shell_cmd_cookies
 
 
 .. toctree::
