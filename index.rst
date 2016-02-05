@@ -3,20 +3,32 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to MyDocuments's documentation!
+Welcome to junxian's documentation!
 =======================================
 
-Contents:
+.. toctree::
+   :caption: All About Python
+   :maxdepth: 2
+   :numbered:
+   :glob:
+
+   docs/python/python_*
+
 
 .. toctree::
+   :caption: All About Shell
    :maxdepth: 2
+   :numbered:
+   :glob:
+
+   docs/shell/shell_*
 
 
+.. toctree::
+   :caption: Markup Languages And Tools
+   :maxdepth: 2
+   :numbered:
+   :glob:
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   docs/markup/markup_*
 
