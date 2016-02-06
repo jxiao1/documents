@@ -5,12 +5,12 @@
 
 .. glob attribute is to support file pattern, e.g. docs/python/python_*
 
-Welcome to junxian's documentation!
+Welcome to Junxian's Documentation!
 =======================================
 
 .. toctree::
    :caption: All About Python
-   :maxdepth: 2
+   :maxdepth: 1
    :numbered:
    :glob:
 
@@ -19,7 +19,7 @@ Welcome to junxian's documentation!
 
 .. toctree::
    :caption: All About Shell
-   :maxdepth: 2
+   :maxdepth: 1
    :numbered:
    :glob:
 
@@ -31,9 +31,11 @@ Welcome to junxian's documentation!
 
 .. toctree::
    :caption: Markup Languages And Tools
-   :maxdepth: 2
+   :maxdepth: 1
    :numbered:
    :glob:
 
    docs/markup/markup_sphinx
+   docs/markup/markup_reStructuredText
+   docs/markup/markup_markdown
 
