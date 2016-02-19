@@ -26,3 +26,7 @@ Online Editor
 | http://rst.ninjs.org
 |
 
+Other References
+----------------
+| https://jeffquast.com/post/technical_writing_with_sphinx/
+|
