@@ -18,6 +18,22 @@ Welcome to Junxian's Documentation!
 
 
 .. toctree::
+   :caption: Python Flask Especially
+   :maxdepth: 1
+   :numbered:
+   :glob:
+
+   docs/python_flask/flask_beginner
+   docs/python_flask/flask_routing
+   docs/python_flask/flask_template
+   docs/python_flask/flask_request_response
+   docs/python_flask/flask_cookie_session
+   docs/python_flask/flask_file_uploads
+   docs/python_flask/flask_message_flashing
+   docs/python_flask/flask_logging
+
+
+.. toctree::
    :caption: All About Shell
    :maxdepth: 1
    :numbered:
