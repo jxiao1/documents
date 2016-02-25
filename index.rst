@@ -31,6 +31,10 @@ Welcome to Junxian's Documentation!
    docs/python_flask/flask_file_uploads
    docs/python_flask/flask_message_flashing
    docs/python_flask/flask_logging
+   docs/python_flask/flask_database
+   docs/python_flask/flask_unittest
+   docs/python_flask/flask_extensions
+   docs/python_flask/flask_tutorial_project
 
 
 .. toctree::

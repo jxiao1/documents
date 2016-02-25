@@ -31,6 +31,15 @@ To access parameters submitted in the URL (?key=value)::
     searchword = request.args.get('key', '')
 
 
+Callback Functions
+------------------
+|
+| @app.before_request
+| @app.after_request
+| @app.teardown_request
+| 
+
+
 Flask Response Object
 =====================
 The return value from a view function is automatically converted into

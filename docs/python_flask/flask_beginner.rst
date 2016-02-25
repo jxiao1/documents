@@ -1,6 +1,7 @@
 Flask Beginner
 ==============
 Just the records when study the Flask docs 0.10 here:
+
 http://flask.pocoo.org/docs/0.10/
 
 
@@ -42,11 +43,15 @@ flask:
     Now you can just enter the following command to get Flask activated
     in your virtualenv:
 
-    ``$ pip install Flask``
+    ``(venv) $ pip install Flask``
 
-    Any time, you can check all your self installed package like this:
+    Any time, you can generate the required packages list like this:
 
-    ``$ pip list``
+    ``(venv) $ pip freeze > ./requirements.txt``
+
+    And set up the same virtual environment in other place list this:
+
+    ``(venv) $ pip install -r requirements.txt``
 
 
 Quickstart
