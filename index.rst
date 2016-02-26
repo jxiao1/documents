@@ -34,7 +34,7 @@ Welcome to Junxian's Documentation!
    docs/python_flask/flask_database
    docs/python_flask/flask_unittest
    docs/python_flask/flask_extensions
-   docs/python_flask/flask_tutorial_project
+   docs/python_flask/flask_project
 
 
 .. toctree::
