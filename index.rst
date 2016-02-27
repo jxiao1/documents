@@ -14,6 +14,7 @@ Welcome to Junxian's Documentation!
    :numbered:
    :glob:
 
+   docs/python/python_data_models
    docs/python/python_shell
    docs/python/python_interview
 

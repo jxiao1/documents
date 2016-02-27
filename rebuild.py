@@ -12,8 +12,11 @@ For example, in the Ubuntu host:
 '''
 
 if os.system('which sphinx-build 2>/dev/null') != 0:
-   print(help_no_sphinx)
-   sys.exit(1)
+    print(help_no_sphinx)
+    sys.exit(1)
 
-os.system('make html')
+if os.system('make html') :
+    print('Fail to build html documents\n')
+    sys.exit(1)
+
 os.system('firefox _build/html/index.html')
