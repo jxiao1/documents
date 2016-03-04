@@ -37,13 +37,12 @@ so you can read and write them from there::
 
     app.debug = True
 
-To update multiple keys at once you can use the dict.update() method:
+To update multiple keys at once you can use the dict.update() method::
 
-app.config.update(
-    DEBUG=True,
-    SECRET_KEY='...'
-)
-
+    app.config.update(
+        DEBUG=True,
+        SECRET_KEY='...'
+    )
 
 .. note::
     The SERVER_NAME key is used for the subdomain support. Because Flask cannot

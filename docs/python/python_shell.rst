@@ -90,7 +90,7 @@ http://amoffat.github.io/sh/
 
 os.system()
 -----------
-Return 0 for success and others for failure::
+Return 0 for success and others for failure.
 
 test.py::
 

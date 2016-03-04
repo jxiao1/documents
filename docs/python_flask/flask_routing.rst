@@ -164,6 +164,8 @@ Flask Bluepoint
 A Blueprint object works similarly to a Flask application object,
 but it is not actually an application. It is a set of operations
 which can be registered on an application, even multiple times.
+We can group views and resources in many subclass blueprint and
+flexibly register them to application later.
 
 Basic example
 -------------
@@ -209,7 +211,7 @@ And sure enough, these are the generated rules::
     [<Rule '/static/<filename>' (HEAD, OPTIONS, GET) -> static>,
      <Rule '/pages/<page>' (HEAD, OPTIONS, GET) -> simple_page.show>,
      <Rule '/pages/' (HEAD, OPTIONS, GET) -> simple_page.show>]
-:wq
+
 On top of that you can register blueprints multiple times though not
 every blueprint might respond properly to that. In fact it depends on
 how the blueprint is implemented if it can be mounted more than once.
