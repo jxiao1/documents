@@ -52,6 +52,15 @@ Welcome to Junxian's Documentation!
 
 
 .. toctree::
+   :caption: All About Git
+   :maxdepth: 1
+   :numbered:
+   :glob:
+
+   docs/git/git_commands
+
+
+.. toctree::
    :caption: Markup Languages And Tools
    :maxdepth: 1
    :numbered:
@@ -61,3 +70,11 @@ Welcome to Junxian's Documentation!
    docs/markup/markup_reStructuredText
    docs/markup/markup_markdown
 
+
+.. toctree::
+   :caption: All Others
+   :maxdepth: 1
+   :numbered:
+   :glob:
+
+   docs/others/filesystem_btrfs
