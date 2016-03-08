@@ -30,6 +30,7 @@ Welcome to Junxian's Documentation!
    docs/python_flask/flask_template
    docs/python_flask/flask_request_response
    docs/python_flask/flask_cookie_session
+   docs/python_flask/flask_ajax
    docs/python_flask/flask_file_uploads
    docs/python_flask/flask_message_flashing
    docs/python_flask/flask_logging
@@ -69,6 +70,17 @@ Welcome to Junxian's Documentation!
    docs/markup/markup_sphinx
    docs/markup/markup_reStructuredText
    docs/markup/markup_markdown
+
+
+.. toctree::
+   :caption: Linux Usage
+   :maxdepth: 1
+   :numbered:
+   :glob:
+
+   docs/linux_usage/linux_syslinux
+   docs/linux_usage/linux_tmux
+   docs/linux_usage/linux_vim
 
 
 .. toctree::
