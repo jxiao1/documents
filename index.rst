@@ -49,6 +49,7 @@ Welcome to Junxian's Documentation!
    docs/shell/shell_variables
    docs/shell/shell_compare
    docs/shell/shell_terminal
+   docs/shell/shell_sed.rst
    docs/shell/shell_cmd_cookies
 
 
@@ -81,6 +82,7 @@ Welcome to Junxian's Documentation!
    docs/linux_usage/linux_syslinux
    docs/linux_usage/linux_tmux
    docs/linux_usage/linux_vim
+   docs/linux_usage/linux_systemd.rst
 
 
 .. toctree::
@@ -90,3 +92,5 @@ Welcome to Junxian's Documentation!
    :glob:
 
    docs/others/filesystem_btrfs
+   docs/others/bootloader_grub2.rst
+

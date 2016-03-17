@@ -1,6 +1,11 @@
 Flask Project
 =============
 
+mega_tutorial
+-------------
+EN: http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
+CN: http://www.pythondoc.com/flask-mega-tutorial/index.html
+
 Typical Strucature
 ------------------
 

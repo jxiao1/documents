@@ -18,15 +18,15 @@ Modify the btrfs filesystem
 ---------------------------
 ::
 
+    # Add/Delete
+    btrfs device add /dev/sdc3 /mnt #Don't need mkfs firtly.
+    btrfs device delete /dev/sdc3 /mnt
+    
     # Resize btrfs filesystem online
     btffs filesystem resize 4G /mnt
     btffs filesystem resize +1G /mnt
     btffs filesystem resize -1G /mnt
 
-    # Add/Delete
-    btrfs device add /dev/sdc1 /mnt #Don't need mkfs firtly.
-    btrfs device delete /dev/sdc1 /mnt
-    
 
 Snapshot and Rollback
 ---------------------
