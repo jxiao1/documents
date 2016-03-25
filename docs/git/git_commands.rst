@@ -40,6 +40,12 @@ Configuration
     sudo git config --system alias.co checkout
     sudo git config --system alias.br branch
 
+    # Get current repo settings
+    git config --get remote.origin.url
+    git config -f path-to-repo/.git/config --get remote.origin.url
+    git ls-remote <rempte-origin-url> refs/heads/master #remote head id
+    git ls-remote ./ refs/heads/master                  #local head id
+
 
 Create Repository
 -----------------
