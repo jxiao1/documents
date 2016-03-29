@@ -17,6 +17,8 @@ Welcome to Junxian's Documentation!
    docs/python/python_data_models
    docs/python/python_shell
    docs/python/python_interview
+   docs/python/python_expert_ssh.rst
+   docs/python/python_web.rst
 
 
 .. toctree::
