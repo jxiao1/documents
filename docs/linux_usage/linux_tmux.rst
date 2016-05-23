@@ -5,6 +5,13 @@ shortcuts & cheatsheet
 ----------------------
 https://gist.github.com/MohamedAlaa/2961058
 
+For example::
+
+    tmux new -s myname              #Start new named tmux session
+    tmux a[ttach] -t myname         #Attach named tmux session
+    tmux ls/list-sessions           #List all tmux session
+    tmux kill-session -t myname     #Kill named tmux session
+
 
 Configuration Example
 ---------------------
