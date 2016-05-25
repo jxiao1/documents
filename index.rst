@@ -9,6 +9,15 @@ Welcome to Junxian's Documentation!
 =======================================
 
 .. toctree::
+   :caption: At The Beginning
+   :maxdepth: 1
+   :numbered:
+   :glob:
+
+   docs/at_the_beginning
+
+
+.. toctree::
    :caption: All About Python
    :maxdepth: 1
    :numbered:
