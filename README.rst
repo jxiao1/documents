@@ -11,4 +11,4 @@ The contents are listed as the following:
 #. Other documents about every thing.
 
 .. _Sphinx: http://www.sphinx-doc.org/en/stable/
-.. _here: http://junxiandoc.readthedocs.org/en/latest/
+.. _here: http://junxiandoc.readthedocs.io/en/latest/
