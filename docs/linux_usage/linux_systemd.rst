@@ -152,15 +152,15 @@ https://www.freedesktop.org/software/systemd/man/systemd.service.html
 Unless DefaultDependencies= is set to false, service units will implicitly
 have dependencies of type Requires= and After= on sysinit.target, a dependency
 of type After= on basic.target as well as dependencies of type Conflicts= and
-Before= on shutdown.target. 
+Before= on shutdown.target.
 
 Note that notify type daemon has to support systemd's notification protocol,
 else systemd will think the service has not started yet and kill it after a timeout.
-(systemd_notify can be sued in script to tell systemd itself is ready.)
+(systemd_notify can be used in script to tell systemd itself is ready.)
 
 systemd.network
 ~~~~~~~~~~~~~~~
-https://www.freedesktop.org/software/systemd/man/systemd.network.html#
+https://www.freedesktop.org/software/systemd/man/systemd.network.html
 
 
 systemd.resource-control

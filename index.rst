@@ -54,6 +54,19 @@ Welcome to Junxian's Documentation!
 
 
 .. toctree::
+   :caption: JavaScript Core
+   :maxdepth: 1
+   :numbered:
+   :glob:
+
+   docs/javascript/javascript_basic
+   docs/javascript/javascript_variables
+   docs/javascript/javascript_expression
+   docs/javascript/javascript_statement
+   docs/javascript/javascript_object
+
+
+.. toctree::
    :caption: All About Shell
    :maxdepth: 1
    :numbered:
