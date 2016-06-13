@@ -64,6 +64,7 @@ Welcome to Junxian's Documentation!
    docs/javascript/javascript_expression
    docs/javascript/javascript_statement
    docs/javascript/javascript_object
+   docs/javascript/javascript_array
 
 
 .. toctree::
