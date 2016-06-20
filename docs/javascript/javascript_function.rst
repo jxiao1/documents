@@ -47,6 +47,7 @@ Defining/Invoking Functions
     var tensquared = (function(x) {return x*x;}(10));
 
 **Invoked ways**::
+
     /* JavaScript functions can be invoked in four ways:
     - as functions,
     - as methods,
@@ -144,6 +145,7 @@ When a function has more than three parameters, it becomes difficult for the pro
 who invokes the function to remember the correct order in which to pass arguments.
 
 ::
+
     function easycopy(args) {
         if (isArray(args.from) && isArray(args.to)) {
             arraycopy(args.from,
@@ -187,6 +189,45 @@ instead of cluttering up the name space by defining a global variable.
         else return NaN;                                // If input was bad
     }
     factorial[1] = 1;                   // Initialize the cache to hold this base case.
+
+
+Methods of Function
+-------------------
+
+**call()/apply()**::
+
+    functionName.call(object, arg1, arg2, ...argN)
+    functionName.apply(object, [arg1, arg2, ...argN])  # arguments list
+
+
+**bind()**::
+
+    var g = f.bind(o[,args]); // g(args...) is equal to o.f(args...)
+
+    function f(y,z) { return this.x + y + z };
+    var g1 = f.bind({x:1});              // Bind object as this only
+    var g2 = f.bind({x:1}, 2);           // Bind this and y
+    g1(2, 3)                 // => 6: this.x is bound to 1, y is 2 and z is 3
+    g2(3)                    // => 6: this.x is bound to 1, y is bound to 2 and z is 3
+
+**toString()**::
+
+    f.toString();            // => '[native code]'
+
+**Function()**::
+
+    var f = new Function("x", "y", "return x*y;");
+
+.. note::
+    There are a few points that are important to understand about the Function() constructor:
+
+    - The Function() constructor allows JavaScript functions to be dynamically created and compiled at runtime.
+
+    - The Function() constructor parses the function body and creates a new function object each time it is called.
+      If the call to the constructor appears within a loop or within a frequently called function, this process can be inefficient.
+      By contrast, nested functions and function definition expressions that appear within loops are not recompiled each time they are encountered.
+
+    - The Function() constructor creates functions which do not use lexical scoping; instead, they are always compiled as if they were top-level functions, use global object as invoked context.
 
 
 Functions As Namespaces
