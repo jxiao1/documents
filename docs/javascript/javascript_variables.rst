@@ -110,7 +110,7 @@ by ending each line but the last with a backslash ( \ ).
 In ECMAScript 5, strings can be treated like read-only arrays, and you
 can access individual characters from a string using square brackets.
 
-::
+Basic Functions::
 
     var s = "Hello, " + "world";
     s.charAt(0)                 // => "h": the first character.
@@ -129,6 +129,29 @@ can access individual characters from a string using square brackets.
     s.search(/world/);          // => 7, first position
     s.match(/l+/g)              // => ["ll", "l"], 'g' means return all matches
     
+Advance Usage::
+
+    "1, 2, 3, 4, 5".split(/\s*,\s*/);   // Returns ["1","2","3","4","5"]
+
+    var s = 'My name is "John"' ;       // $1 refer to the first matches
+    s.replace(/"([^'"]*)"/g, "'$1'")    // => My name is 'John'
+
+    "1 plus 2 equals 3".match(/\d+/g)   // returns ["1", "2", "3"]
+    "1 plus 2 equals 3".match(/\d+/)    // returns ["1"]
+    "1 plus 2 equals 3".match(/(\d+)/g) // returns ["1", "2", "3"]
+    "1 plus 2 equals 3".match(/(\d+)/)  // returns ["1", "1"], the first matches and content in "()" in turn
+
+    var url_pattern = /(\w+):\/\/([\w.]+)\/(\S*)/;
+    var text = "Visit my blog at http://www.example.com/~david";
+    var result = text.match(url_pattern);
+    if (result != null) {
+        var fullurl = result[0];    // Contains "http://www.example.com/~david"
+        var protocol = result[1];   // Contains "http"
+        var host = result[2];       // Contains "www.example.com"
+        var path = result[3];       // Contains "~david"
+    }
+    
+
 Boolean
 -------
 

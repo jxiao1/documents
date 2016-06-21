@@ -169,7 +169,11 @@ Function itself also has length, you can access it like this:
 "functionName.length" or "arguments.callee.length"
 
 **prototype**
-Will be used when invoked as constructor.
+Every function(except the one return by bind) will have this property.
+It's used when invoked as constructor, and class inheritance.
+
+"prototype" will auto have a "constructor" property.
+F.prototype.constructor===F is true for any function.
 
 
 **Defining Your Own Function Properties**
