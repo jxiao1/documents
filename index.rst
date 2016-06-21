@@ -66,6 +66,8 @@ Welcome to Junxian's Documentation!
    docs/javascript/javascript_object
    docs/javascript/javascript_array
    docs/javascript/javascript_function
+   docs/javascript/javascript_class
+   docs/javascript/javascript_re
 
 
 .. toctree::
