@@ -1,5 +1,34 @@
 JavaScript Types and Variables
-=================================
+==============================
+
+Examples::
+
+    const pi = 3.1415926;  // const value cannot be changed
+    var a = 'test';
+    var b = 'test';
+    a == b ;           // true, Primitive type only compare value
+
+    var a = {x: 1};
+    var a = {x: 1};
+    a == b             // false
+
+    c = a;
+    c.x = 2;
+    a.x;               // => 2, object is reference type
+    a === c;           // true
+
+    // 'let' defines block level values in loop or function.
+    for (let i=1; i<len; i++) { ...} 
+
+    [x, y] = [1, 2]                                // x=1, y=2
+    [x, y] = [y, x]                                // switch x and y
+    [a, b, c] = [1, 2]                             // a=1, b=2, c=undefined
+    [a, [b, c]] = [1, [2,3], 4]                    // a=1, b=2, c=3
+    {r: red, g:green, b:blue} = {r:0, g:255, b:0}; // red=0, green=255, blue=0
+
+    var data=[1, 2, -3];
+    var squares = [x*x for each (x in data) if (x>=0)] // squares = [1, 4]
+
 
 Primitive/Object Type
 ---------------------
@@ -20,21 +49,6 @@ Primitive/Object Type
 - date
 - regexp
 - error
-
-::
-
-    var a = 'test';
-    var b = 'test';
-    a == b ;           // true, Primitive type only compare value
-
-    var a = {x: 1};
-    var a = {x: 1};
-    a == b             // false
-
-    c = a;
-    c.x = 2;
-    a.x;               // => 2, object is reference type
-    a === c;           // true
 
 
 Mutable/Immutable Type
@@ -103,6 +117,7 @@ Date
 
 String
 ------
+http://www.w3school.com.cn/jsref/jsref_obj_string.asp
 
 In ECMAScript 3, string literals must be written on a single line.
 In ECMAScript 5, however, you can break a string literal across multiple lines

@@ -1,5 +1,8 @@
 JavaScript Basic
 ================
+http://www.w3school.com.cn/b.asp
+http://www.w3school.com.cn/js/index_pro.asp
+https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
 JavaScript Overview
 -------------------

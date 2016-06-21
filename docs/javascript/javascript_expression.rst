@@ -68,6 +68,7 @@ same precedence level::
     | var v = a || b || 2, common way to provide defualt values.
     | Global variables are properties of the global object, so they can be deleted
 
+
 === and ==
 ----------
 The strict equality operator === evaluates its operands, and then compares the two

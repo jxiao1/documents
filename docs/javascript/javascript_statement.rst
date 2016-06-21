@@ -33,7 +33,7 @@ ample, and then use that label inside the function.
 Statements Structure
 --------------------
 
-::
+statements::
 
     // Initialize an array a
     for(i = 0; i < a.length; a[i++] = 0) /* empty */ ;
@@ -120,6 +120,29 @@ Statements Structure
     }
 
     if (o === undefined) debugger;
+
+examples::
+
+    var o = {one: 1, two: 2, three: 3};
+    for (let p in o) console.log(p);            // indexes: one, two, three
+    for each (let v in o) console.log(v)        // values: 1, 2, 3
+
+    try {
+        // more than one type of exception where
+        throw 1;
+    }
+    catch(e if e instanceof ReferenceError) {
+        //do something here
+    }
+    catch(e if e === "quit") {
+        // do something here
+    }
+    catch(e){ //all other cases
+        // do something here
+    }
+    finally {
+        // do something here
+    }
 
 
 'use strict' Directive
