@@ -59,15 +59,15 @@ Welcome to Junxian's Documentation!
    :numbered:
    :glob:
 
-   docs/javascript/javascript_basic
-   docs/javascript/javascript_variables
-   docs/javascript/javascript_expression
-   docs/javascript/javascript_statement
-   docs/javascript/javascript_object
-   docs/javascript/javascript_array
-   docs/javascript/javascript_function
-   docs/javascript/javascript_class
-   docs/javascript/javascript_re
+   docs/javascript/core/javascript_basic
+   docs/javascript/core/javascript_variables
+   docs/javascript/core/javascript_expression
+   docs/javascript/core/javascript_statement
+   docs/javascript/core/javascript_object
+   docs/javascript/core/javascript_array
+   docs/javascript/core/javascript_function
+   docs/javascript/core/javascript_class
+   docs/javascript/core/javascript_re
 
 
 .. toctree::
