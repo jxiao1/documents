@@ -84,7 +84,7 @@ Welcome to Junxian's Documentation!
 
 
 .. toctree::
-   :caption: All About Git
+   :caption: Git Usage
    :maxdepth: 1
    :numbered:
    :glob:
@@ -104,23 +104,27 @@ Welcome to Junxian's Documentation!
 
 
 .. toctree::
-   :caption: Linux Usage
+   :caption: Linux
    :maxdepth: 1
    :numbered:
    :glob:
 
-   docs/linux_usage/linux_syslinux
-   docs/linux_usage/linux_tmux
-   docs/linux_usage/linux_vim
-   docs/linux_usage/linux_systemd.rst
+   docs/linux/linux_syslinux
+   docs/linux/linux_grub2.rst
+   docs/linux/linux_systemd.rst
+   docs/linux/linux_btrfs.rst
 
 
 .. toctree::
-   :caption: All Others
+   :caption: Ubuntu Usage
    :maxdepth: 1
    :numbered:
    :glob:
 
-   docs/others/filesystem_btrfs
-   docs/others/bootloader_grub2.rst
+   docs/ubuntu/ubuntut_install
+   docs/ubuntu/ubuntut_services
+   docs/ubuntu/ubuntut_shortcuts
+   docs/ubuntu/ubuntut_tmux
+   docs/ubuntu/ubuntut_vim
+   docs/ubuntu/ubuntut_zsh
 

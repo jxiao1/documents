@@ -1,8 +1,50 @@
-Linux Vim
-=========
+Ubuntu Vim Editor
+=================
 
-Vimrc Example
+Setup
+-----
+https://github.com/VundleVim/Vundle.vim/wiki/Examples
+
+**Install vundle**::
+    $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+**Prepare for YouCompleteMe**::
+
+    $ sudo apt-get install cmake build-essential libclang1 libclang-dev python-dev
+    $ vim vimrc:
+        Plugin 'Valloric/YouCompleteMe'
+
+**Install plugins**::
+
+    :PluginInstall                  # Install all defined plugins
+    :PluginUpdate                   # Update all defined plugins
+
+    or:
+
+    $ vim +PluginInstall +qall        # Install all defined plugins outside Vim.
+
+**Postinstall for YouCompleteMe**::
+
+    $ cd ~/.vim/bundle/YouCompleteMe
+    $ git submodule update --init --recursive
+    $ ./install.py --clang-completer
+
+
+Plugins Usage
 -------------
+
+**YouCompleteMe**
+https://github.com/Valloric/YouCompleteMe
+
+::
+
+    ctrl+o              # Return
+    ctrl+i              # Go ahead
+
+
+vimrc Example
+-------------
+
 ::
 
     "===============================================================

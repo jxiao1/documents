@@ -9,8 +9,9 @@ sphinx
 Install
 -------
 
-    - ``$ sudo apt-get install sphinx-common python-sphinx``
-    - ``$ sudo apt-get install texlive``
+    - ``$ sudo apt-get install sphinx-common python-sphinx texlive``
+    - ``$ sudo pip install recommonmark``
+    - ``$ sudo pip install sphinx_rtd_theme``
 
 
 Quick Start
