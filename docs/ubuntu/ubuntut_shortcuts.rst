@@ -4,7 +4,8 @@ Ubuntu Shortcuts
 Ubuntu Terminal(16.04)
 ----------------------
 
-::
+Edit => Preferences => Shortcuts::
+
     New Terminal in New Tab         ctrl+shift+t
     New Terminal in New Window      ctrl+shift+n
     Close Terminal tab              ctrl+shift+w
