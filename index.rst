@@ -124,7 +124,8 @@ Welcome to Junxian's Documentation!
    docs/ubuntu/ubuntut_install
    docs/ubuntu/ubuntut_services
    docs/ubuntu/ubuntut_shortcuts
-   docs/ubuntu/ubuntut_tmux
-   docs/ubuntu/ubuntut_vim
    docs/ubuntu/ubuntut_zsh
+   docs/ubuntu/ubuntut_vim
+   docs/ubuntu/ubuntut_atom
+   docs/ubuntu/ubuntut_tmux
 

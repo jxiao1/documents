@@ -39,7 +39,7 @@ or export prompt directly in .zshrc::
     local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
     local suffix="%{$fg_bold[blue]%}$ %{$reset_color%}"
     export PROMPT='%{$fg_bold[cyan]%}%d%{$reset_color%} $(git_prompt_info)
-    %F{magenta}%B%K{magenta}█▓▒░%F{white}%K{magenta}%B%* %D%b%F{magenta}%K{black}█▓▒░ ${ret_status}%{$reset_color%} '
+    %F{magenta}%B%K{magenta}█▓▒░%F{white}%K{magenta}%B%* %D%b%F{magenta}%K{black}█▓▒░ ${ret_status}%b%k%f%{$reset_color%} '
 
     Sequence    Printed
     %T          System time (HH:MM)
@@ -116,4 +116,4 @@ zshrc example
     local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
     local suffix="%{$fg_bold[blue]%}$ %{$reset_color%}"
     export PROMPT='%{$fg_bold[cyan]%}%d%{$reset_color%} $(git_prompt_info)
-    %F{magenta}%B%K{magenta}█▓▒░%F{white}%K{magenta}%B%* %D%b%F{magenta}%K{black}█▓▒░ ${ret_status}%{$reset_color%} '
+    %F{magenta}%B%K{magenta}█▓▒░%F{white}%K{magenta}%B%* %D%b%F{magenta}%K{black}█▓▒░ ${ret_status}%b%k%f%{$reset_color%} '
