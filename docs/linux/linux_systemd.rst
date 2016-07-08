@@ -80,7 +80,6 @@ Be sure that the target you are isolating does not stop any essential services::
 
 check the boot time::
 
-
     $ systemd-analyze                                                                                       
     $ systemd-analyze nginx
     $ systemd-analyze critical-chain

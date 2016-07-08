@@ -1,6 +1,8 @@
 Git Quickstart
 ==============
 
+https://git-scm.com/book
+
 Installation
 ------------
 For example, in Ubuntu::

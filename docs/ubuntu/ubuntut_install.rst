@@ -1,6 +1,10 @@
 Ubuntu Installation
 ===================
 
+Maybe we should also fork/create a project to do this automatically.
+http://yuez.me/cong-ling-da-jian-he-pei-zhi-osxkai-fa-huan-jing/
+
+
 Pre-Installation
 ----------------
 
