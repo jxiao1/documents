@@ -2,6 +2,9 @@ File System btrfs
 =================
 https://btrfs.wiki.kernel.org/index.php/Main_Page
 
+sudo apt-get install btrfs-tools
+
+
 Create btrfs filesystem
 -----------------------
 ::

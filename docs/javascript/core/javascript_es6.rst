@@ -14,3 +14,8 @@ http://es6-features.org/
 Browsers Compatibilities
 ------------------------
 https://kangax.github.io/compat-table/es6/
+
+
+Other References
+----------------
+https://github.com/ruanyf/es6tutorial
