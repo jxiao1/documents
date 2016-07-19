@@ -71,3 +71,17 @@ because this package is droped after this ubuntu 13.04::
     rm /etc/apt/sources.list.d/ia32-libs-raring.list
     apt-get update
 
+
+youtao-dict
+-----------
+
+To avoid gstreamer0.10-plugins-ugly dependence issue, use deepin version but not ubuntu version.
+http://codown.youdao.com/cidian/linux/youdao-dict_1.1.0-0-deepin_amd64.deb
+
+sudo apt-get install python3-pyqt5 python3-xlib
+sudo apt-get install tesseract-ocr tesseract-ocr-chi-sim tesseract-ocr-chi-tra
+sudo apt-get install ttf-wqy-microhei
+sudo apt-get install python3-pyqt5.qtmultimedia python3-pyqt5.qtquick python3-pyqt5.qtwebkit
+sudo apt-get install qtdeclarative5-controls-plugin libqt5multimedia5-plugins
+sudo dpkg -i youdao-dict_1.1.0-0-deepin_amd64.deb
+
