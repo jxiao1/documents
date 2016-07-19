@@ -22,9 +22,10 @@ Mutable sequences: list, byte array,
 The key of dictionary must can not be changed, for example: ``int, float, string, tuple``.
 But the value of dictionary can be any data type.
 
-.. seealso:: pickle module
+.. note::
 
-.. note:: The differences between reference and copy
+    - The differences between reference and copy
+    - See also pickle module
 
 
 Other operation supported by sequences
@@ -119,6 +120,188 @@ Delete::
     >>> numbers
     [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+
+Operations supported by string
+------------------------------
+
+String is a special kind of sequence, so most of the above sequence operations are valid to string,
+such as slicing, '+', '*',  and build-in functions 'len', 'cmp', for example::
+
+
+    s[::-1]  # reverse the string
+
+    str="This is a string"" and some others together"
+
+    str1 = 'strcat'
+    str2 = 'append'
+    str1 += str2
+
+    # basestring is the base calse of all string and unicode type:
+    # The following way can check whether the it's a string.
+    isinstance(myobj, basesring)
+
+
+Format a string
+---------------
+
+
+
+**Usage: format_string % tuple/dictionary**
+https://docs.python.org/2/library/stdtypes.html#string-formatting
+
+Format string: ``%[[+/-]width][.precision]type``
+
+Examples::
+
+    %s,  %8d, %-16s, %10.2f, %010.2f,  %+5d
+
+    print "My name is %s, age is %d\n" % (name, age) 
+
+    d = {'name': 'Alex', 'age': 42}
+    print "Name is %(name)s, age is %d" % d
+
+
+**Usage: Template()**
+https://docs.python.org/2/library/string.html#template-strings
+
+Examples::
+
+    >>> s = Template("My name is $name, age is $age")
+    >>> s.substitute(name="John", age=18)  #使用变量赋值
+    'My name is John, age is 18'
+    >>> d = {'name':'John', 'age':18}
+    >>> s.substitute(d)     #使用字典赋值
+    'My name is John, age is 18'
+
+**Usage: format()**
+https://docs.python.org/2/library/string.html#custom-string-format_string
+
+Examples::
+
+    >>> '{0}, {1}, {2}'.format('arg0', 'arg1', 'arg2')
+    'arg0, arg1, arg2'
+
+    >>> '{0}, {arg1}, {arg2}'.format('arg0', arg1='arg1', arg2='arg2')
+    'arg0, arg1, arg2'
+
+    >>> '{arg0}, {0}, {arg2}'.format('arg1', arg0='arg0', arg2='arg2')  # named arguments must be at last.
+    'arg0, arg1, arg2'
+
+    >>> config['conf0':'arg0', 'conf1':'arg1']
+    >>> '{0[conf0]}, {0[conf1]}, {1}'.format(config, 'arg2')
+    'arg0, arg1, arg2'
+
+    >>> '|{0[conf0]:>10}|{0[conf1]:<10}|{1:^10}|'.format(config, 'arg2')  # alignment
+    '|      arg0|arg1      |   arg2   |'
+
+    >>> '{0:.{1}f}'.format(1/3.0, 4)
+    '0.3333'
+
+
+String related constants
+------------------------
+
+https://docs.python.org/2/library/string.html#string-constants
+
+Examples::
+
+    >>> import string
+    >>> string.digits
+    '0123456789'
+    >>> string.ascii_letters
+    'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    >>> string.lowercase  # ascii_lowercase
+    'abcdefghijklmnopqrstuvwxyz'
+    >>> string.uppercase  # ascii_uppercase
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    >>> string.printable
+    '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\r\x0b\x0c'
+
+Build-in functions for string
+-----------------------------
+
+https://docs.python.org/2/library/string.html#string-functions
+
+.. note::
+    As string is not changable, so all the return value is the new copy.
+
+    >>> dir(string)
+    >>> dir(s)
+
+Build-in Functions::
+
+    S.find(substr, [start, [end]])
+    S.rfind(substr, [start, [end]])
+    S.index(substr, [start, [end]]) # similar to find, but maybe index exception.
+    S.rindex(substr, [start, [end]])
+    S.count(substr, [start, [end]])
+
+
+    S.replace(oldstr, newstr, [count])
+    S.strip([chars])
+    S.lstrip([chars])
+    S.rstrip([chars])
+    S.expandtabs([tabsize])
+
+    S.lower()
+    S.upper()
+    S.swapcase()
+    S.capitalize()
+    S.title()
+
+    S.partition(substr)
+    S.rpartition(substr)
+    S.split([sep, [maxsplit]])
+    S.rsplit([sep, [maxsplit]])
+    S.splitlines([keepends])
+    S.join(sequence)
+
+    S.isalnum()
+    S.isalpha()
+    S.isdigit()
+    S.islower()
+    S.isupper()
+    S.isspace()
+    S.istitle()
+    S.startswith(prefix [, start, end])
+    S.endswith(suffix [, start, end])
+
+    S.center(width[, fillchar])
+    S.ljust(width[, fillchar])
+    S.rjust(width[, fillchar])
+    S.zfill(width)
+
+    S.translate(table[,deletechars])
+
+    S.encode([encoding,[errors]])
+    S.decode([encoding,[errors]])
+
+    string.atoi(s[,base])
+    string.atol(s[,base])
+    string.atof(s[,base])
+
+Examples::
+
+    >>> st = string.maketrans("0123456789", "abcdefghij")
+    >>> "001".translate(st)
+    'aab'
+
+    allchars = string.maketrans('', '')   # nothing is changed
+    keep = 'abcde'
+    alldel = allchars.translate(allchars, keep)   # all execpt characters in keep
+    s.translater(allchars , alldel)   # all in keep
+
+    >>> se = "007".encode('base64')
+    >>> se.decode('base64')
+    '007'
+
+re library
+----------
+https://docs.python.org/2/library/re.html
+
+::
+
+    >>> dir(re)
 
 Sequences type cast
 -------------------
