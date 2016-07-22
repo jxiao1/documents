@@ -1,5 +1,5 @@
-Zsh Usage
-=========
+Ubuntu Zsh Usage
+================
 
 zsh
 ---------
@@ -72,10 +72,12 @@ The final plugins::
 FAQ
 ---
 
-**Q**: vi ~/.z  (TAB Complete)          
-_arguments:450: _vim_files: function definition file not found
-
-**A**: rm -rf ~/.zcompdump* ; then relogin the zsh
+#. | Q: vi ~/.z  (TAB Complete) 
+   |    arguments:450: _vim_files: function definition file not found.
+   | A: rm -rf ~/.zcompdump* ; then relogin the zsh
+   |
+#. | Q: time -p ls (Command not found: -p)
+   | A: time in zsh is a shell reserved word, but not /usr/bin/time binary tool.
 
 
 zshrc example
@@ -91,6 +93,7 @@ zshrc example
     alias vi='vim'
     alias grep='grep --color=auto'
     alias zshconfig='source ~/.zshrc'
+    alias time='/usr/bin/time -p'
 
     alias -s txt=vim          # Run *.txt as opening it in vim editor
 

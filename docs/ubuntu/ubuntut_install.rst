@@ -85,3 +85,12 @@ sudo apt-get install python3-pyqt5.qtmultimedia python3-pyqt5.qtquick python3-py
 sudo apt-get install qtdeclarative5-controls-plugin libqt5multimedia5-plugins
 sudo dpkg -i youdao-dict_1.1.0-0-deepin_amd64.deb
 
+
+python3
+-------
+
+Maybe the python3 is already installed, but you need to install pip3::
+
+    sudo apt-get install python3-pip
+
+Then you can install python3 modules using ``sudo pip3 install xxx``

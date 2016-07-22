@@ -1,5 +1,5 @@
-Linux tmux
-==========
+Ubuntu Tmux
+===========
 
 shortcuts & cheatsheet
 ----------------------
