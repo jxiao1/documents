@@ -24,10 +24,12 @@ Welcome to Junxian's Documentation!
    :glob:
 
    docs/python/python_pythonic.rst
-   docs/python/python_builtin
-   docs/python/python_data_models
-   docs/python/python_shell
-   docs/python/python_interview
+   docs/python/python_builtin.rst
+   docs/python/python_data_models.rst
+   docs/python/python_function.rst
+   docs/python/python_module.rst
+   docs/python/python_shell.rst
+   docs/python/python_interview.rst
    docs/python/python_expert_ssh.rst
    docs/python/python_web.rst
    docs/python/python_debug.rst

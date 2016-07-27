@@ -138,6 +138,8 @@ Complete the command by 'tab'
     git log -3
     git log ^HEAD~3 HEAD
     git log HEAD~3..HEAD
+    git log --pretty=short --decorate   # Show commit log together with ref names, such as tags.
+    git log --format="%h | %s | %d"     # Show log in "Hash | Subject | Ref-names" format
 
     git show HEAD --stat
     git show-ref

@@ -606,3 +606,40 @@ Operations supported by set
 
     >>> s = set()
     >>> s.add('test')
+
+
+Define and use of Enum
+----------------------
+
+enum is standard after python 3.4,  for older version, please try "pip install enum".
+
+::
+
+    from enum import Enum, IntEnum, unique
+    try:
+        @unique
+        class WEEKDAY(Enum):
+            MON = 1
+            TUS = 2
+            WEN = 3
+            THU = 4
+            FRI = 1
+    except ValueError as e:
+        print(e)
+    
+    duplicate values found in <enum 'WEEKDAY'>: FRI -> MON
+    
+    try:
+        class Color(IntEnum):
+            RED = 0
+            GREEN = 1
+            BLUE = 'b'
+    except ValueError as e:
+        print(e)
+        
+    invalid literal for int() with base 10: 'b'
+
+    red = class(0)
+    print(red is Color.R)       # True
+    print(red == 0)             # False
+

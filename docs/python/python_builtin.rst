@@ -89,9 +89,9 @@ others
 ------
 ::
 
-    map(function, sequence, ...)   # one to one return after map
-    filter(function, sequence)       # final one result after function(lastreturn/initial, next)
-    reduce(function, sequence[, initial])   # all tures
+    map(function, sequence, ...)   # list that one to one return after map
+    filter(function, sequence)     # list that all ture values
+    reduce(function, sequence[, initial])   # final one result after function(lastreturn/initial, next)
 
     zip(a, b)
     >>> names = ["Alex", "John", "Mike"]

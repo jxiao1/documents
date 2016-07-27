@@ -1,7 +1,15 @@
 Flask Sqlite3
 =============
 
-Using Sqlite3 with Flash :
+Using flask-sqlalchemy
+----------------------
+
+(venv) $ pip install flask-sqlalchemy
+
+
+Using Sqlite3 with Flash
+------------------------
+
 http://flask.pocoo.org/docs/0.10/patterns/sqlite3/#sqlite3
 
 Python sqlite3 standard library :

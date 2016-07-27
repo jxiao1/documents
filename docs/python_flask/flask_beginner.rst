@@ -31,7 +31,7 @@ virtualenv:
 
         $ mkdir myproject
         $ cd myproject
-        $ virtualenv venv
+        $ virtualenv [--python=python3] venv  # default is python2
 
     Now, whenever you want to work on a project, you only have to activate
     the corresponding environment:
