@@ -33,6 +33,7 @@ Welcome to Junxian's Documentation!
    docs/python/python_expert_ssh.rst
    docs/python/python_web.rst
    docs/python/python_debug.rst
+   docs/python/python_gui.rst
 
 
 .. toctree::
