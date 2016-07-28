@@ -18,7 +18,7 @@ Welcome to Junxian's Documentation!
 
 
 .. toctree::
-   :caption: All About Python
+   :caption: Python Basic And Common
    :maxdepth: 1
    :numbered:
    :glob:
@@ -27,6 +27,7 @@ Welcome to Junxian's Documentation!
    docs/python/python_builtin.rst
    docs/python/python_data_models.rst
    docs/python/python_function.rst
+   docs/python/python_functional.rst
    docs/python/python_module.rst
    docs/python/python_shell.rst
    docs/python/python_interview.rst
@@ -37,7 +38,7 @@ Welcome to Junxian's Documentation!
 
 
 .. toctree::
-   :caption: Python Flask Especially
+   :caption: Python Flask
    :maxdepth: 1
    :numbered:
    :glob:
@@ -55,6 +56,8 @@ Welcome to Junxian's Documentation!
    docs/python_flask/flask_unittest
    docs/python_flask/flask_extensions
    docs/python_flask/flask_project
+   docs/python_flask/flask_restful_api.rst
+   docs/python_flask/flask_addons.rst
 
 
 .. toctree::
@@ -75,7 +78,7 @@ Welcome to Junxian's Documentation!
 
 
 .. toctree::
-   :caption: All About Shell
+   :caption: Shell Core and Skills
    :maxdepth: 1
    :numbered:
    :glob:

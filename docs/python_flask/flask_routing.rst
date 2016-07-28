@@ -37,6 +37,10 @@ path         like the default but also accepts slashes
     @app.route('/hello/<name>')
     def hello(name=None): pass
 
+    @app.route('/<name>/test/<age>')
+    def user(name, age):
+        return '<h1>Hello %s, age is %s!</h1>' %(name, age)
+
 
 Trailing slash in the URL
 -------------------------
@@ -76,13 +80,16 @@ Here are some examples::
 
     with app.test_request_context():
         print url_for('index')
+        print url_for('index', _external=True)
         print url_for('login')
         print url_for('login', next='/')
         print url_for('profile', username='John Doe')
 
+
 The result::
 
     /
+    http://localhost:5000/
     /login
     /login?next=/
     /user/John%20Doe
@@ -117,6 +124,7 @@ to serve them for you, but during development Flask can do that as well.
 Just create a folder called static in your package or next to your module
 and it will be available at /static on the application.
 
+As static is the default routing function created when app is initialized.
 To generate URLs for static files, use the special 'static' endpoint name:
 
 ``url_for('static', filename='style.css')``

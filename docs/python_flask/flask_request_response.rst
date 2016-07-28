@@ -23,6 +23,13 @@ Overview Example
         # was GET or the credentials were invalid
         return render_template('login.html', error=error)
 
+Response to Request:
+
+- Plain text string
+- response object
+- redirect('<ohter-url>')
+- abort(<error_code>)
+
 
 Get the args in the URL
 -----------------------
@@ -33,11 +40,18 @@ To access parameters submitted in the URL (?key=value)::
 
 Callback Functions
 ------------------
+
+Decorator to define callback function:
+
 |
-| @app.before_request
-| @app.after_request
-| @app.teardown_request
+| @app.before_first_request    # Only before the first request
+| @app.before_request          # Before each request
+| @app.after_request           # After each request if no exception
+| @app.teardown_request        # After each request even there is exceptions
 | 
+
+Global variable 'g' is valid in above functions. For example, we can
+use g.user to share login information among these functions.
 
 
 Flask Response Object

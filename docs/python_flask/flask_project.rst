@@ -23,6 +23,13 @@ The typical project directory tree::
     │   └── test_basic.py
     └── venv
 
+Examples:
+
+- https://github.com/Jaza/flask-editablesite
+- https://github.com/miguelgrinberg/flasky
+- http://www.jb51.net/article/60889.htm
+- http://www.jb51.net/article/60738.htm
+
 
 Configuration Handling
 ----------------------

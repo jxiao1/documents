@@ -1,8 +1,16 @@
 Flask Beginner
 ==============
-Just the records when study the Flask docs 0.10 here:
 
-http://flask.pocoo.org/docs/0.10/
+| Flask docs 0.10 here: http://flask.pocoo.org/docs/0.10/
+| Flask docs in CN: http://dormousehole.readthedocs.io
+| Flask on OSChian: http://www.oschina.net/translate/tag/flask
+| Flask mega tutorial: http://www.pythondoc.com/flask-mega-tutorial/index.html
+| Explore Flask: http://www.pythondoc.com/exploreflask/index.html
+| Resources and plugins: https://github.com/humiaozuzu/awesome-flask
+| 
+| Other references: http://www.jeffknupp.com/blog/2014/03/03/what-is-a-web-framework/
+| See also other documents(CN) here: http://www.pythondoc.com/
+|
 
 
 Installation
@@ -43,7 +51,7 @@ flask:
     Now you can just enter the following command to get Flask activated
     in your virtualenv:
 
-    ``(venv) $ pip install Flask``
+    ``(venv) $ pip install flask jinja2 werkzeug``
 
     Any time, you can generate the required packages list like this:
 
@@ -84,12 +92,15 @@ Start the service::
     $ python hello.py >/dev/null 2>&1 &
 
 Now head over to http://127.0.0.1:5000/user/flask, and you should see your
-'hello flask!' greeting.
+'hello flask!' greeting.  Or in command line mode::
+
+    $ curl -i http://127.0.0.1:5000/user/flask
 
 
 Deploying to a Web Server
 -------------------------
 |
+| `Deploying Flash on Cherrypy WSGI server`_
 | `Deploying Flask on Heroku`_
 | `Deploying WSGI on dotCloud with Flask-specific notes`_
 | `Deploying Flask on Webfaction`_
@@ -100,6 +111,7 @@ Deploying to a Web Server
 | see the chapter on `Deployment Options`_.
 |
 
+.. _Deploying Flash on Cherrypy WSGI server: http://flask.pocoo.org/snippets/24/
 .. _Deploying Flask on Heroku: https://devcenter.heroku.com/articles/getting-started-with-python#introduction
 .. _Deploying WSGI on dotCloud with Flask-specific notes: http://flask.pocoo.org/snippets/48/
 .. _Deploying Flask on Webfaction: http://flask.pocoo.org/snippets/65/

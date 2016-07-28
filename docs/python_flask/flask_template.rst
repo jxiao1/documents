@@ -4,6 +4,8 @@ Generating HTML from within Python is not fun, and actually pretty cumbersome
 because you have to do the HTML escaping on your own to keep the application
 secure. Because of that Flask configures the Jinja2 template engine for you.
 
+http://jinja.pocoo.org/docs/dev/
+
 
 Rendering Templates
 -------------------
