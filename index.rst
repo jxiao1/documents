@@ -29,12 +29,16 @@ Welcome to Junxian's Documentation!
    docs/python/python_function.rst
    docs/python/python_functional.rst
    docs/python/python_module.rst
-   docs/python/python_shell.rst
+   docs/python/python_design_pattern.rst
+   docs/python/python_project.rst
    docs/python/python_interview.rst
-   docs/python/python_expert_ssh.rst
+   docs/python/python_shell.rst
+   docs/python/python_expect_ssh.rst
    docs/python/python_web.rst
+   docs/python/python_web_scraping.rst
    docs/python/python_debug.rst
    docs/python/python_gui.rst
+   docs/python/python_resources.rst
 
 
 .. toctree::
@@ -43,21 +47,21 @@ Welcome to Junxian's Documentation!
    :numbered:
    :glob:
 
-   docs/python_flask/flask_beginner
-   docs/python_flask/flask_routing
-   docs/python_flask/flask_template
-   docs/python_flask/flask_request_response
-   docs/python_flask/flask_cookie_session
-   docs/python_flask/flask_ajax
-   docs/python_flask/flask_file_uploads
-   docs/python_flask/flask_message_flashing
-   docs/python_flask/flask_logging
-   docs/python_flask/flask_database
-   docs/python_flask/flask_unittest
-   docs/python_flask/flask_extensions
-   docs/python_flask/flask_project
-   docs/python_flask/flask_restful_api.rst
-   docs/python_flask/flask_addons.rst
+   docs/flask/flask_beginner
+   docs/flask/flask_routing
+   docs/flask/flask_template
+   docs/flask/flask_request_response
+   docs/flask/flask_cookie_session
+   docs/flask/flask_ajax
+   docs/flask/flask_file_uploads
+   docs/flask/flask_message_flashing
+   docs/flask/flask_logging
+   docs/flask/flask_database
+   docs/flask/flask_unittest
+   docs/flask/flask_extensions
+   docs/flask/flask_project
+   docs/flask/flask_restful_api.rst
+   docs/flask/flask_addons.rst
 
 
 .. toctree::

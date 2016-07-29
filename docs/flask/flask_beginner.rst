@@ -97,10 +97,17 @@ Now head over to http://127.0.0.1:5000/user/flask, and you should see your
     $ curl -i http://127.0.0.1:5000/user/flask
 
 
+Project Template
+----------------
+
+https://github.com/sloria/cookiecutter-flask
+
+
 Deploying to a Web Server
 -------------------------
 |
 | `Deploying Flash on Cherrypy WSGI server`_
+| `Deploying Flask on pythonanywhere`_
 | `Deploying Flask on Heroku`_
 | `Deploying WSGI on dotCloud with Flask-specific notes`_
 | `Deploying Flask on Webfaction`_
@@ -112,6 +119,7 @@ Deploying to a Web Server
 |
 
 .. _Deploying Flash on Cherrypy WSGI server: http://flask.pocoo.org/snippets/24/
+.. _Deploying Flask on pythonanywhere: https://www.pythonanywhere.com/pricing/
 .. _Deploying Flask on Heroku: https://devcenter.heroku.com/articles/getting-started-with-python#introduction
 .. _Deploying WSGI on dotCloud with Flask-specific notes: http://flask.pocoo.org/snippets/48/
 .. _Deploying Flask on Webfaction: http://flask.pocoo.org/snippets/65/
