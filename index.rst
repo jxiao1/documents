@@ -26,6 +26,9 @@ Welcome to Junxian's Documentation!
    docs/python/python_pythonic.rst
    docs/python/python_builtin.rst
    docs/python/python_data_models.rst
+   docs/python/python_expression.rst
+   docs/python/python_statement.rst
+   docs/python/python_exception.rst
    docs/python/python_function.rst
    docs/python/python_functional.rst
    docs/python/python_module.rst

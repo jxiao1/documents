@@ -26,6 +26,34 @@ Module "unittest" for unit tests.
 Documentation
 -------------
 
+Tips:
+
+#. Use some formal template of document
+#. Simple sentences
+#. One topic for each paragraph
+#. More use of present tenses
+#. Use real codes as the examples.
+#. Good code is always better than many documents.
+
+HowTO:
+
+1. Document project: sphinx + reStructuredText
+2. doctest: https://docs.python.org/2/library/doctest.html
+3. pydoc: https://docs.python.org/2/library/pydoc.html
+4. epydoc tool: http://epydoc.sourceforge.net/
+
+Epydoc is a tool for generating API documentation for Python modules, 
+based on their docstrings. For an example of epydoc's output, see the
+`API documentation for epydoc itself`_.
+
+A lightweight markup language called epytext can be used to format
+docstrings, and to add information about specific fields, such as
+parameters and instance variables. Epydoc also understands docstrings
+written in reStructuredText_, Javadoc, and plaintext.
+
+.. _API documentation for epydoc itself: http://epydoc.sourceforge.net/api/
+.. _reStructuredText: http://epydoc.sourceforge.net/othermarkup.html
+
 
 License
 -------
