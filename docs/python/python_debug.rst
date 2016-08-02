@@ -1,7 +1,9 @@
 Python Performance and Debug
 ============================
-http://www.jb51.net/article/63244.htm
-http://blog.jobbole.com/51062/
+
+- https://wiki.python.org/moin/PythonTestingToolsTaxonomy
+- http://www.jb51.net/article/63244.htm
+- http://blog.jobbole.com/51062/
 
 
 pdb
@@ -16,8 +18,21 @@ timeit
 /usr/bin/time --verbose python test.py
 
 
+trace
+-----
+https://docs.python.org/3/library/trace.html
+
+The trace module allows you to trace program execution, generate annotated statement coverage listings,
+print caller/callee relationships and list functions executed during a program run.
+It can be used in another program or from the command line.
+
+python -m trace --count -C . somefile.py
+
+
 cProfile
 --------
+https://docs.python.org/3/library/profile.html
+
 python -m cProfile -s cumulative test.py
 
 
@@ -61,19 +76,23 @@ pip install xdot objgraph
 
 guppy
 -----
-pip install guppy
+http://guppy-pe.sourceforge.net/
 
-from guppy import hpy
-  
-def random_sort3(n):
-  hp = hpy()
-  print "Heap at the beginning of the functionn", hp.heap()
-  l = [random.random() for i in range(n)]
-  l.sort()
-  print "Heap at the end of the functionn", hp.heap()
-  return l
-  
-if __name__ == "__main__":
-  random_sort3(2000000)
+Install: ``sudo pip install guppy``
 
-hp.heap().more.more  # for more defails
+Example::
+
+    from guppy import hpy
+      
+    def random_sort3(n):
+      hp = hpy()
+      print "Heap at the beginning of the functionn", hp.heap()
+      l = [random.random() for i in range(n)]
+      l.sort()
+      print "Heap at the end of the functionn", hp.heap()
+      return l
+      
+    if __name__ == "__main__":
+      random_sort3(2000000)
+
+    #hp.heap().more.more  for more defails

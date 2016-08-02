@@ -37,6 +37,41 @@ Compound statements:
 - Coroutines
 
 
+Assignment statement
+--------------------
+
+All assignment expression will not return value like C language.
+There is syntax error in this expression: ``5 == (x = 5)``.
+
+All assignment are reference copy, but not real deep copy. For example::
+
+    >>> L1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    >>> L2 = L1[::2]    # L2 = [0, 2, 4, 6, 8]
+    >>> L1[2] = 20      # L1[2] point to reference of int '20', L2 is still not changed.
+    >>> L2
+    [0, 2, 4, 6, 8]     # L2[1] is still point to int '2'
+
+    >>> L1[2] = [1, 2]
+    >>> L2 = L1[::2]    # Both L1[2] and L2[1] point to the refrence of list [1, 2]
+    >>> L1[2][0] = 10   # The first value of list [1, 2] is changed to 10
+    >>> L1
+    [0, 1, [10, 2], 3, 4, 5, 6, 7, 8, 9]
+    >>> L2
+    [0, [10, 2], 4, 6, 8]  # So both the value in L1 and L2 are changed, because of the same one reference.
+
+
+Special assignment examples::
+
+    x, y, z = (1, 2, 3)
+    a,b,c,d = 'test'
+    a, b = ['111', '222']
+    a,b = c, d
+
+    [a, b] = [c, d]
+    for (a, b, c) in [(1,2,3), (4,5,6)]: pass
+
+    x = y = z = 1
+
 while statement
 ---------------
 
@@ -48,19 +83,33 @@ Syntax::
         ...
 
 
+if statement
+------------
+
+Examples::
+
+    if 0<age<10: pass
+
+
 for statement
 -------------
 
 Examples::
 
-    for x in List: ... else: pass
+    for x in List/Tuple/String: ... else: pass
+    for k in Dict: pass
+
     for  (a, b) in [(1, 2), (3, 4), (5, 6)]: pass
 
     for line in open('test.txt'): pass    # read one line each time
     for line in open('test.txt').readlines(): pass    # read all into list
+    for line in os.popen('ls -1 /'): pass
 
     for i in range(0,10, 2):  print L[i]
     for l in L[::2]:  print l       # will copy L[::2] as new list, use more memory than above case.
+
+.. note::
+    All object with __next__() method is iteriable,  next(o) is equal to o.__next()
 
 
 with statement

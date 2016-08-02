@@ -34,6 +34,8 @@ Welcome to Junxian's Documentation!
    docs/python/python_module.rst
    docs/python/python_design_pattern.rst
    docs/python/python_project.rst
+   docs/python/python_pep8_cn.rst
+   docs/python/python_unittest.rst
    docs/python/python_interview.rst
    docs/python/python_shell.rst
    docs/python/python_expect_ssh.rst

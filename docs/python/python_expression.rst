@@ -16,7 +16,6 @@ Arithmetic conversions:
 - otherwise, both must be integers and no conversion is necessary.
 
 
-Await expression
 The power operator
 Unary arithmetic and bitwise operations
 Binary arithmetic operations
@@ -31,8 +30,23 @@ Evaluation order
 Operator precedence
 
 
-List Expression
----------------
+Logical expressions
+-------------------
+
+False::
+
+    False None 0 "" () [] {}    
+
+Examples::
+
+    name = input("Please enter your name: ")  or 'Unknown'
+    x = A or B or C or default
+
+    x = 1 if 5<6 else 0
+
+
+List Comprehensions
+-------------------
 
 Examples::
 
@@ -50,10 +64,21 @@ Examples::
     [2, 5, 10, 17, 5, 8, 13, 20, 10, 13, 18, 25, 17, 20, 25, 32]
 
 
-Dictionary Expression
----------------------
+Dictionary Comprehensions
+-------------------------
 
     # dict([(str(i), i**2) for i in range(0,5)])
     >>> {str(i):i**2 for i in range(0,5)} 
     {'3': 9, '4': 16, '0': 0, '2': 4, '1': 1}
 
+
+Generator Expression
+--------------------
+
+Examples::
+
+    total = sum(num * num for num in xrange(1, 101))
+
+    month_codes = dict((fn(i+1), code)
+                        for i, code in enumerate('FGHJKMNQUVXZ')
+                        for fn in (int, str))
