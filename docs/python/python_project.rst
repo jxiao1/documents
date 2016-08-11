@@ -89,6 +89,14 @@ Configuration
 #. Module "csv" for csv configuration file
 #. Module "xml.etree.ElementTree " for xml configuration file
 
+Examples for json::
+
+    with open('comments.json', 'r') as f: # see also json.load()
+        comments = json.loads(f.read())
+
+    with open('comments.json', 'w') as f: # see also json.dump()
+        f.write(json.dumps(comments, indent=4, separators=(',', ': ')))
+
 
 Unittest
 --------

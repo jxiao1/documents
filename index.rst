@@ -31,6 +31,7 @@ Welcome to Junxian's Documentation!
    docs/python/python_exception.rst
    docs/python/python_function.rst
    docs/python/python_functional.rst
+   docs/python/python_class.rst
    docs/python/python_module.rst
    docs/python/python_design_pattern.rst
    docs/python/python_project.rst
@@ -97,6 +98,7 @@ Welcome to Junxian's Documentation!
    docs/shell/shell_terminal
    docs/shell/shell_sed.rst
    docs/shell/shell_cmd_cookies
+   docs/shell/shell_project.rst
 
 
 .. toctree::

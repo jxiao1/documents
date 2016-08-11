@@ -5,6 +5,8 @@ Specification
 -------------
 | http://daringfireball.net/projects/markdown/syntax
 |
+| http://wowubuntu.com/markdown/index.html
+|
 
 Full Examples (zh_CN)
 ---------------------
@@ -19,12 +21,13 @@ Difference between md and rst
 
 Online Editor
 -------------
+| http://mahua.jser.me/
 | https://maxiang.io/
 | http://dillinger.io/
 |
 
-Markdown to reStructruedText
-----------------------------
+Markdown to HTML
+----------------
 
 #. Download `markdown-browser-0.6.0-beta1.tgz <https://github.com/evilstreak/markdown-js/releases>`_
 

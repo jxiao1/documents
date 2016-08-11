@@ -23,14 +23,23 @@ importable from flask.ext.foo:
 Popular Extensions
 ------------------
 
+How to install extensions: ``sudo pip install extension-name``.
 
-sudo pip install flask-script       # start server with host/port in CLI
-sudo pip install flask-bootstrap    # bootstrap style templates
-sudo pip install flask-moment       # For time
-sudo pip install flash-wtf          # For form
-sudo pip install flask-sqlalchemy   # Manage database such as MySQL, Postgres, SQLite
-sudo pip install flask-mail         # For e-mail
-sudo pip install flask-login        # Login authentication management
-sudo pip install flask-httpauth     # http authentication
-sudo pip install flask-restful      # For RESTful API
+**Flask-Assets**:
+
+http://flask-assets.readthedocs.io/en/latest/
+
+Flask-Assets helps you to integrate webassets, which is to merge and compress JavaScript and CSS files.
+
+**Other extensions**:
+
+#. flask-script       # start server with host/port in CLI
+#. flask-bootstrap    # bootstrap style templates
+#. flask-moment       # For time
+#. flash-wtf          # For form
+#. flask-sqlalchemy   # Manage database such as MySQL, Postgres, SQLite
+#. flask-mail         # For e-mail
+#. flask-login        # Login authentication management
+#. flask-httpauth     # http authentication
+#. flask-restful      # For RESTful API
 

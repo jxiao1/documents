@@ -17,4 +17,8 @@ Python Learning Resources
 | https://github.com/CodementorIO/Python-Learning-Resources
 | https://github.com/vinta/awesome-python
 |
+| http://www.jianshu.com/p/e9bb36a5d63f
+|
+| https://www.hackerrank.com/
+|
 

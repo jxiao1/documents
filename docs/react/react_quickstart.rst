@@ -4,6 +4,9 @@ React Quick Start
 | https://facebook.github.io/react/
 | https://facebook.github.io/react/docs/getting-started.html
 |
+| http://reactjs.cn/react/index.html
+| http://reactjs.cn/react/docs/getting-started.html
+|
 
 Starter Kit
 -----------

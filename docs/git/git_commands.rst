@@ -96,6 +96,7 @@ Complete the command by 'tab'
                ? - print help
 
     git clean -fd		        #Clear all unmanaged files
+    git clean -fX                       #Clear all the files defined in .gitignore
     git checkout .		        #Clear all changes to the managed files
 
     git commit -s	                #Add signoff line automatically, and need to add log message in editor.
@@ -107,6 +108,7 @@ Complete the command by 'tab'
     git checkout .		        #clear all the changes to the managed file in workspace
     git checkout -- filename	        #checkout single file
     git checkout branchname -- filename #checkout file in other branch, both stage and workspace will be changed.
+    git checkout -b branchname          #create and switch to the new branch
 
     git reset --soft <commit>	        #reset HEAD refernce, but not the content
     git reset --soft HEAD^		#revert the git commit
@@ -118,13 +120,18 @@ Complete the command by 'tab'
     git clone
     git push
     git pull
-    git pull --rebase		        # rebase
+    git pull --rebase		        #rebase
     git merge <commit>		        # merge current HEAD and commit
     git cherry-pick <commit>	        #pick commit in any branch and put it after current HEAD
     git revert HEAD		        #revert itself is a commit
 
-    git grep "string-to-find"
+    git rebase --autostash              #Stash changes before rebasing
+
+    git grep --line-number "something"  #grep in tracked files
+
     git status			        #option -s for short version
+    git status --ignored                #show the ignored files list at the same time
+
     git config user.name [value]        #no value means get value, otherwise set the value
     git config --luser.name
 
@@ -134,21 +141,32 @@ Complete the command by 'tab'
     git log --graph --oneline
     git log -p HEAD			#-p is to show the diff patch in each commit
     git log --stat HEAD		        #show what files are changed
-    git log --oneline --decorate	#all show tags and other references
+    git log --oneline --decorate	#Show all tags and other references
     git log -3
     git log ^HEAD~3 HEAD
     git log HEAD~3..HEAD
-    git log --pretty=short --decorate   # Show commit log together with ref names, such as tags.
-    git log --format="%h | %s | %d"     # Show log in "Hash | Subject | Ref-names" format
+    git log --pretty=short --decorate   #Show commit log together with ref names, such as tags.
+    git log --format="%h | %s | %d"     #Show log in "Hash | Subject | Ref-names" format
+    git log Branch1 ^Branch2            #Show commit which in Branch1 but not in Branch2
+    git log --all --grep 'something'    #Show commit log which match the special text.
+    git log -- filename                 #Show commit log related to special file.
+
+    git shortlog                        #Show summary only, but grouped by author.
+
+    git cherry -v master                #Show all commits which are not merged to master yet.
+
+    git describe --tags --abbrev=0      #Show the last tag
 
     git show HEAD --stat
     git show-ref
+    git show <branch_name>:<file_name>  #Show file in special branch
 
     git diff                            #workspace to stage
     git diff --cached                   #stage to remote
     git diff HEAD                       #workspace to remote
     git diff HEAD^ HEAD
     git diff HEAD^ HEAD -- filename     #the diff of single file
+    git diff --word-diff                #Show inline changes in detail
 
     git blame filename
     git blame -L 6 +5 filename	        #only show 5 lines begin from line 6
@@ -191,18 +209,19 @@ Complete the command by 'tab'
     git rev-parse HEAD^
     git rev-parse --symbolic --branches #show local branches
     git rev-parse --symbolic --tags	#show local tags
+    git rev-parse --abbrev-ref HEAD     #Show the name of current branch
 
     git rev-list --oneline A	        #show the version relationship
 
     git ls-files -s 		        #show file tree and last commit ID
     git ls-tree -l HEAD
+    git ls-files --others -i --exclude-standard  # Show all files which are ignored.
 
     git cat-file -t <ID>		#type of the ID (commit or tag ...)
     git cat-file -p <ID>		#content of the ID
 
     git reflog show master	        #show the log on master branch
     git reflog -1			#show last action of HEAD
-
 
 
 Typical Use Cases

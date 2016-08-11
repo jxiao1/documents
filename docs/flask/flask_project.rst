@@ -31,6 +31,19 @@ Examples:
 - http://www.jb51.net/article/60738.htm
 
 
+Project Template
+----------------
+https://github.com/sloria/cookiecutter-flask
+
+Install cookiecutter::
+
+    $ sudo pip install cookiecutter
+    $ cookiecutter https://github.com/sloria/cookiecutter-flask.git
+
+    $ sudo apt-get install libpq-dev python-dev
+    $ sudo pip install -r requirements/dev.txt  (or do this in virtualenv)
+
+
 Configuration Handling
 ----------------------
 http://flask.pocoo.org/docs/0.10/config/
