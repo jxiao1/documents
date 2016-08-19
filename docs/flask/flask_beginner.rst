@@ -44,7 +44,11 @@ virtualenv:
     Now, whenever you want to work on a project, you only have to activate
     the corresponding environment:
 
-    ``$ . venv/bin/activate``
+    ``$ . venv/bin/activate`` or ``$ source venv/bin/activate``
+
+    After all, if you want to exit the virtualenv:
+
+    ``(venv) $ deactivate``
 
 flask:
 
@@ -126,3 +130,13 @@ Deploying to a Web Server
 .. _Deploying Flask on Google App Engine: https://github.com/kamalgill/flask-appengine-template
 .. _Sharing your Localhost Server with Localtunnel: http://flask.pocoo.org/snippets/89/
 .. _Deployment Options: http://flask.pocoo.org/docs/0.10/deploying/#Deployment
+
+
+Books
+-----
+
+Flask Web Development: Developing Web Application with Python
+
+Author: Miguel Grinberg
+github: https://github.com/miguelgrinberg
+Blog: http://blog.miguelgrinberg.com
