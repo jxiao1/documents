@@ -1,5 +1,5 @@
 # Summary
 
 * Junxian's Documents
-* [Python](python.md)
+* [Python](docs/python/python_project.rst)
 
