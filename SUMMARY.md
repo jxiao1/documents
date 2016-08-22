@@ -1,5 +1,5 @@
 # Summary
 
 * Junxian's Documents
-* Python
+* [Python](python.md)
 
