@@ -42,6 +42,19 @@ https://github.com/Valloric/YouCompleteMe
     ctrl+i              # Go ahead
 
 
+Plugins Shortcuts
+-----------------
+
+nerdtree::
+
+    <CR>|o: open in prev window (auto close if NERDTreeQuitOnOpen = 1)
+    go:     preview only, so will not change the window focuse.
+    gi:     split in preview window
+    gs:     vsplit in preview window
+    i:      split current nerdtree window, so it's better useing it with NERDTreeQuitOnOpen = 1
+    s:      open vsplist
+
+
 vimrc Example
 -------------
 

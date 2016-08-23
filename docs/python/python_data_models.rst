@@ -295,16 +295,46 @@ Examples::
     >>> se.decode('base64')
     '007'
 
+
 re library
 ----------
+
 https://docs.python.org/2/library/re.html
 
 ::
 
-    >>> dir(re)
+    re.search(pattern, string, flags=0)
+    re.match(pattern, string, flags=0)
+    re.fullmatch(pattern, string, flags=0)
+    re.split(pattern, string, maxsplit=0, flags=0)
+    re.findall(pattern, string, flags=0)
+    re.finditer(pattern, string, flags=0)
+    re.sub(pattern, repl, string, count=0, flags=0)
+    re.escape(string)
+
+
+textwrap module
+---------------
+
+https://docs.python.org/3/library/textwrap.html
+
+::
+
+    textwrap.wrap(text, width=70, **kwargs)
+    textwrap.fill(text, width=70, **kwargs)
+    textwrap.shorten(text, width, **kwargs)
+    textwrap.dedent(text)
+    textwrap.indent
+    class textwrap.TextWrapper(**kwargs)
+
 
 Sequences type cast
 -------------------
+
+Integer to Binary string::
+
+    # Use built-in function bin()
+    bin(n)[2:]
 
 Sting to list::
 
@@ -321,6 +351,12 @@ List to string::
     # Items for join function must be strings or characers
     >>> ''.join(['P', 'y', 't', 'h', 'o', 'n'])
     'Python'
+
+
+list to set::
+
+    # unique the list after from list to set and back to list
+    list(set(l))
 
 
 List build-in functions

@@ -45,6 +45,7 @@ Welcome to Junxian's Documentation!
    docs/python/python_email.rst
    docs/python/python_debug.rst
    docs/python/python_gui.rst
+   docs/python/python_version_differences.rst
    docs/python/python_resources.rst
 
 
