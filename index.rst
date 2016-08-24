@@ -9,15 +9,6 @@ Welcome to Junxian's Documentation!
 =======================================
 
 .. toctree::
-   :caption: At The Beginning
-   :maxdepth: 1
-   :numbered:
-   :glob:
-
-   docs/at_the_beginning
-
-
-.. toctree::
    :caption: Python Basic And Common
    :maxdepth: 1
    :numbered:
@@ -151,4 +142,14 @@ Welcome to Junxian's Documentation!
    docs/ubuntu/ubuntut_vim
    docs/ubuntu/ubuntut_atom
    docs/ubuntu/ubuntut_tmux
+
+
+.. toctree::
+   :caption: At The Beginning
+   :maxdepth: 1
+   :numbered:
+   :glob:
+
+   docs/panetration_test/at_the_beginning.rst
+   docs/panetration_test/vulnerability-scan.rst
 
