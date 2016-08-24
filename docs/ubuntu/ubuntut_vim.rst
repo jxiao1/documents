@@ -5,6 +5,11 @@ Setup
 -----
 https://github.com/VundleVim/Vundle.vim/wiki/Examples
 
+**Dependencies**::
+
+    $ sudo apt-get install python vim exuberant-ctags git
+    $ sudo pip install dbgp vim-debug pep8 flake8 pyflakes isort
+
 **Install vundle**::
     $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 

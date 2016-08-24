@@ -101,6 +101,7 @@ Welcome to Junxian's Documentation!
    docs/shell/shell_sed.rst
    docs/shell/shell_cmd_cookies
    docs/shell/shell_project.rst
+   docs/shell/shell_switch_root.rst
 
 
 .. toctree::
@@ -109,7 +110,9 @@ Welcome to Junxian's Documentation!
    :numbered:
    :glob:
 
+   docs/git/git_quickstart.rst
    docs/git/git_commands
+   docs/git/git_workflow.rst
 
 
 .. toctree::

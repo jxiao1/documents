@@ -139,4 +139,6 @@ Flask Web Development: Developing Web Application with Python
 
 Author: Miguel Grinberg
 github: https://github.com/miguelgrinberg
+Example source code: https://github.com/miguelgrinberg/flasky
 Blog: http://blog.miguelgrinberg.com
+

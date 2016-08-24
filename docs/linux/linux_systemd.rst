@@ -27,7 +27,7 @@ Basic operators::
     $ sudo systemctl poweroff
     $ sudo systemctl reboot
 
-other tools::
+Other tools::
 
     hostnamectl #get/set hostname
     localectl   #get/set local settings, e.g. LANG
@@ -35,6 +35,9 @@ other tools::
         $ sudo timedatectl set-timezone America/New_York
         $ sudo timedatectl set-time YYYY-MM-DD
         $ sudo timedatectl set-time HH:MM:SS
+
+    .. note::
+        timedatectl also show the systemd ntp(systemd-timesyncd service) status.
 
 If you only wish to see the journal entries from the current boot::
 
@@ -54,7 +57,7 @@ Switch the run level::
     $ ln -sf /usr/lib/systemd/system/graphical.target /etc/systemd/system/default.target
     $ ln -sf /usr/lib/systemd/system/multi-user.target /etc/systemd/system/default.target
 
-Unit Dependences::
+Unit Dependencies::
 
     $ systemctl show -p "Wants" multi-user.target
 
@@ -78,7 +81,7 @@ Be sure that the target you are isolating does not stop any essential services::
 
     sudo systemctl isolate multi-user.target
 
-check the boot time::
+Check the boot time::
 
     $ systemd-analyze                                                                                       
     $ systemd-analyze nginx
@@ -148,7 +151,7 @@ https://www.freedesktop.org/software/systemd/man/systemd.service.html
 
 [Service] section configure the service specific configuration options.
 
-Unless DefaultDependencies= is set to false, service units will implicitly
+Unless DefaultDependencies is set to false, service units will implicitly
 have dependencies of type Requires= and After= on sysinit.target, a dependency
 of type After= on basic.target as well as dependencies of type Conflicts= and
 Before= on shutdown.target.
@@ -178,7 +181,7 @@ debug shell
 ~~~~~~~~~~~
 You can enable shell access very early in the startup process to fall back on
 and diagnose systemd related boot up issues with various systemctl commands.
-It also avtive when shutdown is not finished. Enable it using::
+It also active when shutdown is not finished. Enable it using::
 
     systemctl enable debug-shell.service
 
