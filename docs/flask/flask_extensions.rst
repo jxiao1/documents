@@ -5,6 +5,8 @@ downloaded with easy_install or pip. If you add a Flask extension as
 dependency to your requirements.rst or setup.py file they are usually
 installed with a simple command or when your application installs.
 
+.. _Flask Extension Registry: http://flask.pocoo.org/extensions/
+
 
 Using Extensions
 ----------------
@@ -17,8 +19,6 @@ importable from flask.ext.foo:
 
 ``from flask.ext import foo``
 
-.. _Flask Extension Registry: http://flask.pocoo.org/extensions/
-
 
 Popular Extensions
 ------------------
@@ -28,12 +28,6 @@ http://www.phperz.com/article/15/0901/153299.html
 
 How to install extensions: ``sudo pip install extension-name``.
 
-Flask-Assets
-~~~~~~~~~~~~
-
-http://flask-assets.readthedocs.io/en/latest/
-
-Flask-Assets helps you to integrate webassets, which is to merge and compress JavaScript and CSS files.
 
 flask-script
 ~~~~~~~~~~~~
@@ -51,6 +45,7 @@ Examples::
     manager = Manager(app)
 
     manager.run()
+
 
 flask-bootstrap
 ~~~~~~~~~~~~~~~
@@ -76,17 +71,14 @@ For example::
     {% endblock %}
 
 
-flask-moment
-~~~~~~~~~~~~
-
-To handle the date/time issue in flask.
-
 flask-sqlalchemy
 ~~~~~~~~~~~~~~~~
 
 http://flask-sqlalchemy.pocoo.org/2.1/
 
 Manage database such as MySQL, Postgres, SQLite
+
+Please see also: http://pythonhosted.org/Flask-MongoAlchemy/
 
 Example::
 
@@ -139,6 +131,7 @@ Example::
     db.session.add(p)
     db.session.commit()
 
+
 flask-login
 ~~~~~~~~~~~
 
@@ -186,6 +179,7 @@ flash-wtf
 |
 
 For create form based on Python language APIs.
+
 
 flask-httpauth
 ~~~~~~~~~~~~~~
@@ -289,6 +283,7 @@ And then you can use token for authentication now::
     curl -s -u <TOKEN>: -H "Content-Type: application/json" \
         http://127.0.0.1:5000/api/v1.0/xxx
 
+
 flask-mail
 ~~~~~~~~~~
 
@@ -328,6 +323,7 @@ Example::
 
     mail.send(msg)
 
+
 flask-restful
 ~~~~~~~~~~~~~
 
@@ -361,6 +357,49 @@ Example::
     if __name__ == '__main__':
         app.run(debug=True)
 
+
+Flask-SSLify
+~~~~~~~~~~~~
+
+https://github.com/kennethreitz/flask-sslify
+
+This is a simple Flask extension that configures your Flask application
+to redirect all incoming requests to HTTPS(only when app.debug is False).
+
+install: ``pip install Flask-SSLify``
+
+See also: http://flask.pocoo.org/snippets/111/
+
+Example::
+    from flask import Flask
+    from flask_sslify import SSLify
+
+    app = Flask(__name__)
+    sslify = SSLify(app)
+
+    context = ('ssl_keys/ca.crt', 'ssl_keys/ca.key')
+    app.run(ssl_context=context)
+
+
+Create the certificate and key::
+
+    openssl genrsa -out ca.key 2048
+    openssl req -new -x509 -days 36500 -key ca.key -out ca.crt -subj \
+    "/C=CN/ST=Beijing/L=Beijing/O=MyOrganization/OU=Hoxm"
+
+    openssl genrsa -out server.key 2048
+    openssl req -new -key server.key -out server.csr -subj \
+    "/C=CN/ST=Beijing/L=Beijing/O=MyOrganization/OU=Hoxm/CN=localhost"
+
+    openssl x509 -req -in server.csr -out server.crt \
+    -CA ca.crt -CAkey ca.key -CAcreateserial -days 3650
+
+This is for ssl in flask directly. If use nginx for proxy, 
+we can use https in nginx but http at the background.
+
+Fixme: url_for for ssl: http://segmentfault.com/q/1010000000167396
+
+
 flask-debugtoolbar
 ~~~~~~~~~~~~~~~~~~
 
@@ -386,8 +425,122 @@ Example::
     toolbar.init_app(app)
 
 
-flask_moment
+flask-moment
 ~~~~~~~~~~~~
 
-Handle the local time
+To handle the local date/time issue in flask.
 
+flask-babel
+~~~~~~~~~~~
+
+http://pythonhosted.org/Flask-Babel/
+
+Flask-Babel is an extension to Flask that adds i18n and l10n support
+to any Flask application. It has builtin support for date formatting
+with timezone support as well as a very simple and friendly interface
+to gettext translations.
+
+
+flask-cache
+~~~~~~~~~~~
+
+http://pythonhosted.org/Flask-Cache/
+
+Cache the result of view or non-view related functions
+
+
+flask-oauth
+~~~~~~~~~~~
+
+http://pythonhosted.org/Flask-OAuth/
+
+Adds OAuth support to Flask. 
+
+
+flask-assets
+~~~~~~~~~~~~
+
+http://flask-assets.readthedocs.io/en/latest/
+
+Flask-Assets helps you to integrate webassets, which is to merge and compress JavaScript and CSS files.
+
+
+falsk-testing
+~~~~~~~~~~~~~
+
+http://pythonhosted.org/Flask-Testing/
+
+The Flask-Testing extension provides unit testing utilities for Flask.
+
+
+flask-themes
+~~~~~~~~~~~~
+
+http://pythonhosted.org/Flask-Themes/
+
+Flask-Themes makes it easy for your application to support a wide range of appearances.
+
+
+flask-user
+~~~~~~~~~~
+
+http://pythonhosted.org/Flask-User/
+
+Flask-User offers the following(and more) features out-of-the-box:
+
+- Registrations and Email Confirmations
+- Change Usernames, Change Passwords, and Forgotten Passwords
+- Role-based Authorization
+- Remember-me cookies
+- Multiple emails per user
+- Internationalization
+
+It uses the following amazing offerings:
+
+- Flask-Babel
+- Flask-Login
+- Flask-Mail
+- SQLAlchemy and Flask-SQLAlchemy
+- WTForms and Flask-WTF
+
+
+flask-security
+~~~~~~~~~~~~~~
+
+Similar to flask-user, just integrate some security things together for you:
+
+- Session based authentication
+- Role management
+- Password encryption
+- Basic HTTP authentication
+- Token based authentication
+- Token based account activation (optional)
+- Token based password recovery / resetting (optional)
+- User registration (optional)
+- Login tracking (optional)
+- JSON/Ajax Support
+
+By integrating various Flask extensions and libraries:
+
+- Flask-Login
+- Flask-Mail
+- Flask-Principal
+- Flask-Script
+- Flask-WTF
+- itsdangerous
+- passlib
+
+Flask-Security supports the following Flask extensions out of the box for data persistence:
+
+- Flask-SQLAlchemy
+- Flask-MongoEngine
+- Flask-Peewee
+ 
+frozen-flask
+~~~~~~~~~~~~
+
+http://pythonhosted.org/Frozen-Flask/
+
+Frozen-Flask freezes a Flask application into a set of static files.
+The result can be hosted without any server-side software other than
+a traditional web server.

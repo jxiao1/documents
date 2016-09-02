@@ -43,11 +43,25 @@ Arguments
 
     test(a="test", b="function")
 
-    param = ("Hellow", "world")
+    param = ("Hello", "world")
     test(*param)
 
     dparam = {'a':"Very", 'b':"happy"}
     test(**dparam)
+
+    test(*['hello', 'world'])  # directly without via a variable
+
+
+Similar to print function::
+
+    >>> print(*{"a":1, 'b':2, "c":3})  # '*' mean keys only
+    b c a
+    >>> print(*[1,2,3])
+    1 2 3
+    >>> print(*{1,2,3})
+    1 2 3
+    >>> print(*(1,2,3), sep='')
+    123
 
 
 lambda expression

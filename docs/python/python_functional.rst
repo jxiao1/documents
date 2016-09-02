@@ -113,6 +113,9 @@ Example::
      iterator-3 => ('Flagstaff', 'AZ'), ('Phoenix', 'AZ'), ('Tucson', 'AZ')
 
     #----------------------------------------------------------------------
+    
+    >>> print(*[(k, list(g)) for k, g in groupby('1222233')], sep=' ')
+    ('1', ['1']) ('2', ['2', '2', '2', '2']) ('3', ['3', '3'])
 
     >>> list(itertools.combinations_with_replacement([1,2,3], 2))
     [(1, 1), (1, 2), (1, 3), (2, 2), (2, 3), (3, 3)]

@@ -7,7 +7,7 @@ Objects are Python’s abstraction for data. All data in a Python program
 is represented by objects or by relations between objects.
 
 Data Modules:
-    number, string, sequence, mapping(dictionary), set
+    number, string, sequence, mapping(dictionary), set/frozenset
 
 Build-in Sequences:
     list, tuple, string, unicode, buffer, xrange
@@ -15,11 +15,12 @@ Build-in Sequences:
 The start index for all Sequences is 0, and -1 is means the last one.
 
 Immutable sequences: string, unicode, tuple
-Mutable sequences: list, byte array, 
+Mutable sequences: list, byte array
 
 (1, ) # If there is only one item in the tuple
 
-The key of dictionary must can not be changed, for example: ``int, float, string, tuple``.
+The key of dictionary must can not be changed, for example:
+``int, float, string, tuple, frozenset``.
 But the value of dictionary can be any data type.
 
 .. note::
@@ -30,6 +31,8 @@ But the value of dictionary can be any data type.
 
 Other operation supported by sequences
 --------------------------------------
+
+https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
 
 Slicing::
 
@@ -143,8 +146,6 @@ such as slicing, '+', '*',  and build-in functions 'len', 'cmp', for example::
 
 Format a string
 ---------------
-
-
 
 **Usage: format_string % tuple/dictionary**
 https://docs.python.org/2/library/stdtypes.html#string-formatting
@@ -352,11 +353,20 @@ List to string::
     >>> ''.join(['P', 'y', 't', 'h', 'o', 'n'])
     'Python'
 
-
-list to set::
+List to set::
 
     # unique the list after from list to set and back to list
     list(set(l))
+    
+Dictionary to set::
+
+    >>> print set({'Hacker' : 'DOSHI', 'Rank' : 616 })
+    set(['Hacker', 'Rank'])
+
+Map to set::
+
+    s = set(map(int, input().strip().split()))
+
 
 
 List build-in functions
@@ -440,6 +450,9 @@ sort::
 
 Operations supported by dictionary
 ----------------------------------
+
+https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
+
 
 Create::
 
@@ -623,25 +636,34 @@ update::
 
 Operations supported by set
 ---------------------------
+
+https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
+
 ::
 
     >>> x = set('python')
     >>> y = {'p', 'o', 'i', 'n', 't'}
 
-    >>> x & y
+    >>> x & y   # x.intersection(y),  in both x and y
     set(['p', 't', 'o', 'n'])
 
-    >>> x | y
+    >>> x | y   # x.union(y),  in x or y
     set(['i', 'h', 'o', 'n', 'p', 't', 'y'])
 
-    >>> x - y
+    >>> x - y   # or x.difference(y),  in x but ont in y
     set(['y', 'h'])
 
-    >>> x ^ y   #differences in x and y
+    >>> x ^ y   #x.symmetric_difference(y),  in x or y but not both
     set(['i', 'h', 'y'])
 
     >>> s = set()
-    >>> s.add('test')
+    >>> s.add('test')      # add 'test' into set
+    >>> s.update('test')   # add 't', 'e', 's', 't' into test
+
+    >>> s.update({1, 6}, [5, 3]) # add 1, 6, 5 ,3 into set
+
+    >>> s.discard(1)   # remove 1 from set if exits.
+    >>> s.remove(1)    # remove 1 from set and raise KeyError if doesn't exit.
 
 
 Define and use of Enum
@@ -678,4 +700,39 @@ enum is standard after python 3.4,  for older version, please try "pip install e
     red = class(0)
     print(red is Color.R)       # True
     print(red == 0)             # False
+
+
+Container datatypes
+-------------------
+
+collections module: https://docs.python.org/3/library/collections.html
+
+This module implements specialized container datatypes providing alternatives
+to Python’s general purpose built-in containers, dict, list, set, and tuple.
+
+For example:
+
+- namedtuple()    factory function for creating tuple subclasses with named fields
+- deque           list-like container with fast appends and pops on either end
+- ChainMap        dict-like class for creating a single view of multiple mappings
+- Counter         dict subclass for counting hashable objects
+- OrderedDict     dict subclass that remembers the order entries were added
+- defaultdict     dict subclass that calls a factory function to supply missing values
+- UserDict        wrapper around dictionary objects for easier dict subclassing
+- UserList        wrapper around list objects for easier list subclassing
+- UserString      wrapper around string objects for easier string subclassing
+
+Examples::
+
+    from collections import Counter, OrderedDict
+
+    class OrderedCounter(Counter, OrderedDict):
+        pass
+
+    [print(*c) for c in OrderedCounter(sorted('bbbaaccde').most_common(3)]
+
+    # output: (top 3 occurrence count and sorted when with the same count)
+    b 3
+    a 2
+    c 2
 
