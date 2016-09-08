@@ -85,8 +85,15 @@ vimrc Example
     Plugin 'tmhedberg/SimpylFold'
     Plugin 'vim-scripts/indentpython.vim'
     Plugin 'nvie/vim-flake8'
+    Plugin 'scrooloose/syntastic'
+    Plugin 'motemen/git-vim'
+    Plugin 'kiten/tabman.vim'
+    "Plugin 'klen/python-mode'
+    "Plugin 'hail2u/vim-css3-syntax'
+    "Plugin 'pangloss/vim-javascript'
+    "Plugin 'mattn/emmet-vim'
+    "Plugin 'ap/vim-css-color'
     "Plugin 'bling/vim-airline'
-    "Plugin 'jiangmiao/auto-pairs'
 
     " All of your Plugins must be added before the following line
     call vundle#end()            " required
@@ -134,8 +141,7 @@ vimrc Example
     au BufNewFile,BufRead *.py set textwidth=100
     au BufNewFile,BufRead *.sh set textwidth=80
     au BufNewFile,BufRead *.sh,*.py set fileformat=unix
-
-    au BufNewFile,BufRead *.js, *.html, *.css set shiftwidth=2
+    "au BufNewFile,BufRead *.js, *.html, *.css set shiftwidth=2
 
     " Use the below highlight group when displaying
     " bad whitespace at end or behind tab.
@@ -151,8 +157,8 @@ vimrc Example
 
     " Tab commands in vim
     nmap <c-t> :tabnew<CR>
-    nmap <c-j> :tabn<CR>
-    nmap <c-k> :tabp<CR>
+    nmap <c-k> :tabn<CR>
+    nmap <c-j> :tabp<CR>
 
     " Toggle some check
     nmap <F8> :set nospell<CR>:set nopaste<CR>
@@ -201,10 +207,35 @@ vimrc Example
     " For plugin scrooloose/nerdtree
     "===============================================================
     map <F4> :NERDTreeToggle<CR>
+    "map <F4> :NERDTreeFind<CR>
     let NERDTreeQuitOnOpen = 1
+    let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '__pycache__']
 
     "===============================================================
     " For tmhedberg/SimpylFold
     "===============================================================
     let g:SimpylFold_docstring_preview=1
+
+    "===============================================================
+    " For scrooloose/syntastic 
+    "===============================================================
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+
+    nmap <leader>e :Errors<CR>
+    nmap <leader>n :lnext<CR>
+    nmap <leader>p :lprevious<CR>
+
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+
+    " Need to install eslint: sudo npm install eslint -g
+    "let g:syntastic_javascript_checkers = ['eslint']
+
+    "===============================================================
+    " For kien/tabman.vim 
+    "===============================================================
 
