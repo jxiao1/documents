@@ -367,6 +367,9 @@ Map to set::
 
     s = set(map(int, input().strip().split()))
 
+List enumerate::
+
+    for idx, value in enumerate(['Spring', 'Summer', 'Fall', 'Winter'])
 
 
 List build-in functions
