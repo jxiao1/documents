@@ -199,3 +199,6 @@ Example for @property::
     print s.score       # ==> 0
     s.score = 98
     print s.score       # ==> 98
+
+Please see also ``@abstractmethod`` in abc(Abstract Base Classes) module.
+
