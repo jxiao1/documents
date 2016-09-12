@@ -8,6 +8,23 @@
 Welcome to Junxian's Documentation!
 =======================================
 
+
+[Overview]
+----------
+
+Documents for study, collections, todos
+
+See also other basics:
+
+| https://github.com/bayandin/awesome-awesomeness
+| https://github.com/t3chnoboy/awesome-awesome-awesome
+| ... (Oh my god!)
+|
+
+
+[Contents]
+----------
+
 .. toctree::
    :caption: Python Basic And Common
    :maxdepth: 1
@@ -38,6 +55,7 @@ Welcome to Junxian's Documentation!
    docs/python/python_gui.rst
    docs/python/python_version_differences.rst
    docs/python/python_resources.rst
+   docs/python/python_opensource.rst
 
 
 .. toctree::
@@ -93,6 +111,7 @@ Welcome to Junxian's Documentation!
    docs/shell/shell_cmd_cookies
    docs/shell/shell_project.rst
    docs/shell/shell_switch_root.rst
+   docs/shell/shell_opensource.rst
 
 
 .. toctree::

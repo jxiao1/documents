@@ -1,6 +1,9 @@
 Python Learning Resources
 =========================
 
+| https://github.com/vinta/awesome-python
+|
+
 | http://code.activestate.com/recipes/langs/python/
 | 
 
@@ -15,7 +18,6 @@ Python Learning Resources
 | 
  
 | https://github.com/CodementorIO/Python-Learning-Resources
-| https://github.com/vinta/awesome-python
 |
 | http://www.jianshu.com/p/e9bb36a5d63f
 |

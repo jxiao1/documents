@@ -1,6 +1,18 @@
 Shell Project
 =============
 
+Logo
+----
+
+Generate logo by figlet::
+
+    git clone https://github.com/cmatsuoka/figlet
+    cd figlet
+    make figlet
+
+    ./showfigfonts -d ./fonts
+    ./figlet MyApp -f ./fonts/standard.flf
+
 
 Self Decompress
 ---------------

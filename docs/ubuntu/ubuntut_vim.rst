@@ -1,6 +1,13 @@
 Ubuntu Vim Editor
 =================
 
+Awesome-vim
+-----------
+https://github.com/akrawchyk/awesome-vim
+
+https://github.com/matteocrippa/awesome-vim
+
+
 Setup
 -----
 https://github.com/VundleVim/Vundle.vim/wiki/Examples

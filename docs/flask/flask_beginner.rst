@@ -11,7 +11,9 @@ Flask Beginner
 | Other references: http://www.jeffknupp.com/blog/2014/03/03/what-is-a-web-framework/
 | See also other documents(CN) here: http://www.pythondoc.com/
 |
-
+| https://github.com/realpython/discover-flask
+| http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
+|
 
 Installation
 ------------
