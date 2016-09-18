@@ -1,0 +1,248 @@
+"===============================================================
+" For vundle plugin management
+"===============================================================
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+" File tree browser
+Plugin 'scrooloose/nerdtree'
+" Searching/Finding
+Plugin 'kien/ctrlp.vim'
+"Plugin 'fisadev/vim-ctrlp-cmdpalette'
+
+Plugin 'rking/ag.vim'
+
+Plugin 'majutsushi/tagbar'
+Plugin 'tmhedberg/SimpylFold'
+
+" awesome colorscheme
+Plugin 'tomasr/molokai'
+
+" Auto-complete
+Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Shougo/neocomplcache.vim'
+
+" Python: indent
+Plugin 'vim-scripts/indentpython.vim'
+" Python: syntax check
+Plugin 'nvie/vim-flake8'
+Plugin 'scrooloose/syntastic'
+" Python: debug
+Plugin 'jaredly/vim-debug'
+" Python: automatically sort imports
+Plugin 'fisadev/vim-isort'
+
+" Zen coding for web dev
+Plugin 'mattn/emmet-vim'
+
+" Window/Tab management
+Plugin 't9md/vim-choosewin'
+Plugin 'kien/tabman.vim'
+
+" Markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'suan/vim-instant-markdown'
+
+" Maybe the best Git integration
+"Plugin 'tpope/vim-fugitive'
+
+" JSX syntax highlight.
+"Plugin 'mxw/vim-jsx'
+
+"Plugin 'motemen/git-vim'
+"Plugin 'klen/python-mode'
+"Plugin 'hail2u/vim-css3-syntax'
+"Plugin 'pangloss/vim-javascript'
+"Plugin 'mattn/emmet-vim'
+"Plugin 'ap/vim-css-color'
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+"===============================================================
+" Normal settings
+"===============================================================
+let mapleader = ","
+let g:mapleader = ","
+
+set shell=bash\ -i
+
+"syntax highlight
+let python_highlight_all=1
+syntax on
+
+"highlight the current line (under line)
+set cursorline
+set hls
+set spell spelllang=en_us
+set number
+set noswapfile
+set nobackup
+set nowritebackup
+
+set autoindent
+set cindent
+set backspace=eol,start,indent
+set showmatch
+
+set expandtab
+set smarttab
+set shiftwidth=4
+
+"auto read when a file is changed from the outside
+set autoread
+set autowrite
+
+"encoding format
+set encoding=utf-8
+set langmenu=utf-8
+set fileencodings=utf-8
+set fileencodings=ucs-bom,utf-8,gb18030,gb2312,cp936,big5,euc-jp,euc-kr,latin1
+let &termencoding=&encoding
+
+au BufNewFile,BufRead *.py set textwidth=100
+au BufNewFile,BufRead *.sh set textwidth=80
+au BufNewFile,BufRead *.sh,*.py set fileformat=unix
+"au BufNewFile,BufRead *.js, *.html, *.css set shiftwidth=2
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+" Use the below highlight group when displaying
+" bad whitespace at end or behind tab.
+highlight BadWhitespace ctermbg=red guibg=red
+au BufRead,BufNewFile * match BadWhitespace /\s\+$/
+au BufRead,BufNewFile * match BadWhitespace /^\t\+/
+
+"!! and @@ for 4 space, replace of tab key
+"inoremap !! <esc>hl<del>h<del>h<del>h<del>i
+"inoremap @@ <esc>lhi<space><space><space><space><esc>i
+"map !! h<del>h<del>h<del>h<del>
+"map @@ i<space><space><space><space><esc>l
+
+" Tab commands in vim
+nmap tt :tabnew<CR>
+nmap ts :tab split<CR>
+nmap tn :tabn<CR>
+nmap tp :tabp<CR>
+
+" Toggle some check
+nmap <F8> :set nospell<CR>:set nopaste<CR>
+
+" Toggle the paste mode to fix autoindent issue
+set pastetoggle=<leader>v
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
+
+"set laststatus=2
+
+"===============================================================
+" Plugins Special settings
+"===============================================================
+
+"[Valloric/YouCompleteMe]---------------------------------------
+nnoremap <leader>j :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"let g:ycm_key_list_select_completion = ['<TAB>', '<c-n>', '<Down>']
+"let g:ycm_key_list_previous_completion = ['<Up>']
+"let g:ycm_auto_trigger = 1
+"let g:ycm_min_num_of_chars_for_completion = 3
+"set completeopt-=preview
+
+"[kien/ctrlp.vim]-----------------------------------------------
+
+" Press ctel+p to open the ctrlp windown and input the filename
+" enter to open file in current windown
+" ctrl+t to open file in new tab
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|pyc)$'
+
+
+"[rking/ag.vim]-------------------------------------------------
+
+"let g:ag_prg = 'ag --nogroup --noheading '
+
+
+"[majutsushi/tagbar]--------------------------------------------
+
+nmap <F3> :TagbarToggle<CR>
+
+
+"[scrooloose/nerdtree]------------------------------------------
+"
+map <F4> :NERDTreeToggle<CR>
+"map <F4> :NERDTreeFind<CR>
+
+let NERDTreeQuitOnOpen = 1
+let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '__pycache__']
+
+
+"[tmhedberg/SimpylFold]-----------------------------------------
+"
+let g:SimpylFold_docstring_preview=1
+
+
+"[scrooloose/syntastic]-----------------------------------------
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+nmap <leader>e :Errors<CR>
+nmap <leader>n :lnext<CR>
+nmap <leader>p :lprevious<CR>
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Need to install eslint: sudo npm install eslint -g
+"let g:syntastic_javascript_checkers = ['eslint']
+
+
+"[kien/tabman.vim]---------------------------------------------- 
+
+let g:tabman_toggle = 'tm'
+let g:tabman_focus  = 'tf'
+let g:tabman_side = 'left'
+
+" Show windows created by plugins, help and quickfix
+let g:tabman_specials = 1
+
+" Disable line numbering in the TabMan window
+let g:tabman_number = 0
+
+
+"[t9md/vim-choosewin]-------------------------------------------
+
+nmap  -  <Plug>(choosewin)
+
+" show big letters
+let g:choosewin_overlay_enable = 1
+
+"[plasticboy/vim-markdown]--------------------------------------
+
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_emphasis_multiline = 0
+let g:vim_markdown_math=1
+let g:vim_markdown_frontmatter=1
+
+"[suan/vim-instant-markdown]------------------------------------
+
+map <F6> :InstantMarkdownPreview<CR>
+let g:instant_markdown_autostart = 0
