@@ -5,7 +5,6 @@ sphinx
 - http://www.sphinx-doc.org/en/stable/contents.html
 - http://www.ibm.com/developerworks/cn/opensource/os-sphinx-documentation/
 
-
 Install
 -------
 
@@ -67,4 +66,10 @@ Convert file format
 http://pandoc.org/
 
 For example, between markdown and reStructureText.
+
+
+Convert to blog
+---------------
+
+http://ablog.readthedocs.io/
 
