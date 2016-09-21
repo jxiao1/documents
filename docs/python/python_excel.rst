@@ -122,6 +122,8 @@ Access one cell::
     (<Cell Sheet.C1>, <Cell Sheet.C2>, ...))
 
     ws['A1'].row            # 1
+    ws['A1'].column         # 'A'
+    ws['A1'].coordinate     # 'A1'
 
 Write-only cell::
 
@@ -132,7 +134,13 @@ Write-only cell::
     cell.font = Font(name='Courier', size=36)
     ws.append([cell, 3.14, None])
 
+
+Working with style:
+
 See also: https://openpyxl.readthedocs.io/en/default/styles.html
+
+Builtin styles: https://openpyxl.readthedocs.io/en/default/styles.html#using-builtin-styles
+
 
 Merge/Unmerge cells::
 

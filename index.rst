@@ -51,7 +51,7 @@ See also other basics:
    docs/python/python_web.rst
    docs/python/python_web_scraping.rst
    docs/python/python_email.rst
-   docs/python/python_execl.rst
+   docs/python/python_excel.rst
    docs/python/python_debug.rst
    docs/python/python_gui.rst
    docs/python/python_version_differences.rst
@@ -157,6 +157,7 @@ See also other basics:
    :glob:
 
    docs/ubuntu/ubuntut_install
+   docs/ubuntu/ubuntut_usage.rst
    docs/ubuntu/ubuntut_services
    docs/ubuntu/ubuntut_shortcuts
    docs/ubuntu/ubuntut_zsh

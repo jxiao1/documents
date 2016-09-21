@@ -57,6 +57,31 @@ echo -17~15 > /proc/PID/oom_adj
 echo f >/proc/sysrq-trigger
 
 
+dtrace
+------
+
+http://blog.chinaunix.net/uid-20696246-id-1891965.html
+
+Installation::
+
+    sudo apt-get install build-essential flex libelf-dev libc6-dev-amd64 binutils-dev libdwarf-dev
+    wget ftp://crisp.dyndns-server.com/pub/release/website/dtrace/dtrace-20111124.tar.bz2
+    make all
+    make install
+    make load
+
+
+SystemTap
+---------
+
+http://www.cnblogs.com/leaven/archive/2011/01/07/1929431.html
+
+
+Fanotify
+--------
+
+http://www.ibm.com/developerworks/cn/linux/l-cn-fanotify/index.html
+
 Graphic Tool
 ------------
 ::
