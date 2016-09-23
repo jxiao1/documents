@@ -171,6 +171,14 @@ Project Template
 
 https://github.com/audreyr/cookiecutter
 
+Create new project base on a template::
+    
+    pip install cookiecutter
+    cookiecutter https://github.com/sloria/cookiecutter-flask.git
+
+All templates here:
+https://github.com/audreyr/cookiecutter#a-pantry-full-of-cookiecutters
+
 
 Other code check tool
 ---------------------

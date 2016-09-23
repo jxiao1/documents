@@ -36,6 +36,12 @@ https://docs.python.org/3/library/profile.html
 python -m cProfile -s cumulative test.py
 
 
+pycallgraph tool
+----------------
+
+http://pycallgraph.slowchop.com/en/master/
+
+
 memory_profiler
 ---------------
 pip install psutil memory_profiler
