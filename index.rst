@@ -165,6 +165,15 @@ See also other basics:
    docs/ubuntu/ubuntut_atom
    docs/ubuntu/ubuntut_tmux
 
+.. toctree::
+   :caption: Database
+   :maxdepth: 1
+   :numbered:
+   :glob:
+
+   docs/database/mangodb/mangodb-quickstart.rst
+   docs/database/mangodb/mangodb-pymongo.rst
+
 
 .. toctree::
    :caption: Panetration Test
