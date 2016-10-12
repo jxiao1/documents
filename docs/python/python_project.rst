@@ -234,3 +234,17 @@ The complexity test tool
 http://www.traceback.org/2008/03/31/measuring-cyclomatic-complexity-of-python-code/
 
 /tmp/pymetrics-0.8.1/pymetrics ./send-pull-request
+
+
+Command-line interfaces
+-----------------------
+
+**argparse**:
+
+https://docs.python.org/3/library/argparse.html#module-argparse
+
+**docopt**:
+
+| https://github.com/docopt/docopt
+| http://docopt.org/
+|
