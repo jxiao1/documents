@@ -55,6 +55,7 @@ See also other basics:
    docs/python/python_debug.rst
    docs/python/python_template_libraries.rst
    docs/python/python_internationalization.rst
+   docs/python/python_charts.rst
    docs/python/python_gui.rst
    docs/python/python_version_differences.rst
    docs/python/python_resources.rst
