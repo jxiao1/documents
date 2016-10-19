@@ -1,6 +1,20 @@
 Python Charts
 =============
 
+Data format and libraries
+-------------------------
+
+csv:            [Standard Library] csv
+json:           [Standard Library] json
+excel:          openpyxl
+database:       sqlite3/pymongodb
+
+Aligned binary data:  [Standard Library] struct::
+
+    >>> import struct
+    >>> struct.unpack_from('5s10s', b'abcde 0123456789')
+    (b'abcde', b' 012345678')
+
 
 matplotlib
 ----------
@@ -9,8 +23,88 @@ matplotlib
 | http://matplotlib.org/gallery.html
 
 
-pie chart
-~~~~~~~~~
+Installation::
+
+    sudo apt-get install python-numpy python-matplotlib python-scipy
+
+
+Overview
+~~~~~~~~
+
+Path for matplotlibrc::
+
+    ./matplotlibrc
+    ~/.config/matplotlib   # get by matplotlib.get_configdir()
+    xxx/site-packages/matplotlib/mpl-data/matplotlibrc    # installation path
+    
+    #matplotlib.matplotlib_fname() get the matplitlibrc file name in use.
+
+
+**set rc parameters**::
+
+    import matplotlib as mpl
+    mpl.rcParams['lines.linewidth'] = 2
+    mpl.rcParams['lines.color'] = 'r'
+
+    # call the rc() function
+    mpl.rc('lines', linewidth=2, color='r')
+    mpl.rcdefaults()
+
+
+plot
+~~~~
+
+Examples::
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+
+    x = np.linspace(-np.pi, np.pi, 256, endpoint=True)
+
+    plt.rcParams['lines.linewidth'] = 2
+    plt.rcParams['lines.color'] = 'r'
+    plt.plot(x, np.sin(x))
+
+    plt.plot(x, np.cos(x), linewidth=3, color='g')
+
+    plt.title('Function $\sin$ and $\cos$')
+    plt.xlim(-np.pi, np.pi)
+    plt.xticks([-np.pi, -np.pi/2, 0, np.pi/2, np.pi],
+               [r'$-\pi$', r'$-\pi$', r'$0$', r'$+\pi/2$', r'$+\pi$',])        
+    #plt.grid()
+    plt.show()
+
+
+date index
+~~~~~~~~~~
+
+Examples::
+
+    import datetime
+    import numpy as np
+    import matplotlib.pyplot as plt                                                                                       
+    import matplotlib.dates as mdates
+
+    start = datetime.datetime(2016, 10, 1)
+    stop  = datetime.datetime(2016, 10, 8)
+    delta = datetime.timedelta(days=1)
+    dates = mdates.drange(start, stop, delta)
+
+    values = np.random.rand(len(dates))
+
+    fig, ax = plt.subplots()
+    ax.plot_date(dates, values, linestyle='-')
+
+    date_format = mdates.DateFormatter('%Y-%m-%d')
+    ax.xaxis.set_major_formatter(date_format)
+
+    fig.autofmt_xdate()
+
+    plt.show()
+
+
+pie
+~~~
 
 Examples::
 
@@ -40,6 +134,31 @@ Examples::
     fig.set_size_inches(6.4, 6.4)                                                                                     
     fig.savefig('test2png.png', dpi=100)
     fig.savefig('/tmp/test.png')
+
+
+scatter
+~~~~~~~
+
+Examples::
+
+    x = [1, 2, 3, 4]
+    y = [5, 4, 3, 2]
+    plt.scatter(x, y)
+
+bar
+~~~
+
+Examples::
+
+    plt.bar(x, y)
+
+
+horizontal bar
+~~~~~~~~~~~~~~
+
+Examples::
+
+    plt.barh(x, y)
 
 
 stacked bar
@@ -77,3 +196,28 @@ Examples::
     #plt.legend((p1[0], p2[0], p3[0]), ('Item1', 'Item2', 'Item3'))
 
     plt.show()
+
+layout
+~~~~~~
+
+Examples::
+
+    import numpy as np
+    import matplotlib.pyplot as plt 
+
+    t = np.arange(0.0, 1.0, 0.01)
+
+    plt.subplot(121)
+    plt.plot(t, np.sin(2 * np.pi * t))
+
+    plt.subplot(122)
+    plt.plot(t, np.cos(2 * np.pi * t))
+       
+    plt.show()
+
+
+pil
+---
+
+http://www.pythonware.com/library/pil/handbook/index.html
+

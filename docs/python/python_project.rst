@@ -26,7 +26,12 @@ Typical Structure
 virtualenv
 ----------
 
-See also: [DOC] "Python Flask" => "Flask Beginner"
+::
+
+    sudo pip install virtualenv
+    sudo pip install virtualenvwrapper
+
+.. see also: [DOC] "Python Flask" => "Flask Beginner"
 
 
 Coding Style
