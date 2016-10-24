@@ -23,4 +23,5 @@ Python Learning Resources
 |
 | https://www.hackerrank.com/
 |
-
+| https://github.com/justmarkham/python-reference
+|

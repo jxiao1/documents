@@ -63,6 +63,9 @@ Examples::
     [a**2 + b**2 for a in range(1,5) for b in range(1,5)]  # 两个序列的全排列组合
     [2, 5, 10, 17, 5, 8, 13, 20, 10, 13, 18, 25, 17, 20, 25, 32]
 
+    l = [(1,2,3), (4,5,6)]
+    [i for t in l for i in t]
+
 
 Dictionary Comprehensions
 -------------------------
