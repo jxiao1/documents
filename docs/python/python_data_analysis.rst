@@ -32,6 +32,7 @@ ipython
 numpy
 -----
 
+- https://docs.scipy.org/doc/numpy-1.10.1/contents.html
 - http://www.numpy.org/
 - https://docs.scipy.org/doc/
 - https://docs.scipy.org/doc/numpy-dev/user/quickstart.html
@@ -51,6 +52,10 @@ The first dimension (axis) has a length of 2, the second dimension has a length 
     [[ 1., 0., 0.],
      [ 0., 1., 2.]]
 
+
+Create ndarray
+~~~~~~~~~~~~~~
+
 Examples::
 
     import numpy as np
@@ -64,6 +69,7 @@ Examples::
     np.empty((2,3))                     # value is not initialized, what in memory. 
     np.zeros((3,4))                     # value is initialized to '0'
     np.ones((2,3,4), dtype=np.int16)    # value is initialized to '1'
+    np.eye(4)                           # 4x4 array I 
 
     f= lambda x, y: 10*x+y
     np.fromfunction(f,(5,4),dtype=int)
@@ -74,41 +80,183 @@ Examples::
            [30, 31, 32, 33],
            [40, 41, 42, 43]])
 
+.. note::
+    reshape and slice only return new view of the array, but not copied the data.
+    change the new view will change the sharing data buffer. If you want to copy
+    data, copy() is required.
+    ``d = a.copy()``
+
+
+Data types
+~~~~~~~~~~
+
+https://docs.scipy.org/doc/numpy-1.10.1/user/basics.types.html
+
+dtype is np.float64 in most cases by default.
+
+::
+
+    ============= ============== =======================================================================
+    Data type     Character Code Description
+    ============= ============== =======================================================================
+    object        O              Python Object
+    string_       SN             String with fixed length of N, e.g. S10 
+    unicode_      UN             Unicode with fixed length of N, e.g. U10
+    bool_         ?              Boolean (True or False) stored as a byte
+    int8          i1             Byte (-128 to 127)
+    int16         i2             Integer (-32768 to 32767)
+    int32         i4             Integer (-2147483648 to 2147483647)
+    int64         i8             Integer (-9223372036854775808 to 9223372036854775807)
+    uint8         u1             Unsigned integer (0 to 255)
+    uint16        u2             Unsigned integer (0 to 65535)
+    uint32        u4             Unsigned integer (0 to 4294967295)
+    uint64        u8             Unsigned integer (0 to 18446744073709551615)
+    float16       f2             Half precision float: sign bit, 5 bits exponent, 10 bits mantissa
+    float32       f4/f           Single precision float: sign bit, 8 bits exponent, 23 bits mantissa
+    float64       f8/d           Double precision float: sign bit, 11 bits exponent, 52 bits mantissa
+    float128      f16/d          Extend double precision float.
+    complex64     c8             Complex number, represented by two 32-bit floats (real and imaginary)
+    complex128    c16            Complex number, represented by two 64-bit floats (real and imaginary)
+    complex256    c32            Represented by two 128-bit floats (real and imaginary components)
+    ============= ============== =======================================================================
+
+Examples::
+
+    a = np.array([1.0, 2, 3])                   # dtype('float64')
+    a = np.array([1.0, 2, 3], dtype=np.int32)   # dtyoe('int32')
+    a = a.astype(np.int64)                      # dtype('int64')
+    a.astype(int).dtype                         # dtype('int64'),  convert pythyon type to numpy type.
+    a.astype('f').dtype                         # dtype('float32'), use the character codes
+    
 
 Array Operations
 ~~~~~~~~~~~~~~~~
 
-Examples::
+- https://docs.scipy.org/doc/numpy-1.10.1/reference/routines.math.html
+- https://docs.scipy.org/doc/numpy-1.10.1/reference/routines.logic.html
+
+**basic**::
 
     a = np.array( [20,30,40,50] )
     b = np.arange( 4 )
     c = a-b
     b**2
     b > 10                              # return the dtype=bool array
+    b += a
+    a *= 3
+
+
+**index**::
 
     a = np.array(12).reshape(4, 3)
+    a[0][0]                             # the element at raw 0 column 0
     a[1:3]                              # raw from 1 to 3 (not included)
     a[::-1]                             # raw in inverted sequence
     a[1]                                # the second raw
     a[-1]                               # the last raw
     a[:, 1]                             # column 1 in each raw
-    b[1:3, [1, 2]]                      # column 1, 2 in raw 1, 2
+    a[1:3, [1, 2]]                      # column 1, 2 in raw 1, 2
+    a[1:5:2, ::3]                       # 1:5:2 for raw and ::3 for column
+
+    x = np.arange(10,1,-1)
+    x[np.array([3, 3, 1, 8])]           # array([7, 7, 9, 2])
 
     a_idx = np.array([1, 2, 1])
     a[a_idx]                            # select item at index 1, 2 ,1
     a_idx = np.array([[1, 3], [2, 4]])
     a[a_idx]                            # new array ([[a[1], a[3]], [a[2], a[4]])
 
-    b += a
-    a *= 3
+    y = np.arange(35).reshape(5,7)
+    y[np.array([0,2,4])]                        # array([[ 0,  1,  2,  3,  4,  5,  6],
+                                                         [14, 15, 16, 17, 18, 19, 20],
+                                                         [28, 29, 30, 31, 32, 33, 34]])
+    y[np.array([0,2,4]), np.array([0,1,2])]     # array([ 0, 15, 30])
+    y[[0,2,4]][:, [0,1,2]]                      # array([[ 0,  1,  2],
+                                                         [14, 15, 16],
+                                                         [28, 29, 30]])
 
+    y[y>20]     # array([21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34])
+    y[np.array([False, False, False,  True,  True])]  # the raws 3 and 4, which is true
+
+    y[y<10] = 10   # set all elements which are little than 10 to 10
+
+    x = np.arange(30).reshape(2,3,5)
+    b = np.array([[True, True, False], [False, True, True]])
+    x[b]                                        # raw 0, 1 in x[0], raw 1, 2 in x[1], total 4x5
+
+    y[np.array([0,2,4]),1:3]                    # raw 0, 2, 4 column 1~2
+
+**newaxis**::
+
+    x = np.arange(5)
+    xx = x[:,np.newaxis]                # 5x1 array([[0],[1],[2],[3],[4]])
+    xy = x[np.newaxis, :]               # 1x5 array([[0, 1, 2, 3, 4]])
+    xx + xy                             # 5x5
+
+**functions**::
+
+    #a.ufunc or np.ufunc(a)
+    abs
+    fabs
+    sqrt
+    square
+    exp
+    log/log10/log2
+    sign                                # return 1 (>0), 0(=0), -1(<0)
+    ceil                                # min integer that >= e for e in elements in a
+    floor                               # max integer that <= e for e in elements in a
+    rint
+    modf
+    isnan
+    isfinite
+    isinf
+    cos/sin
+    tan
+    logical_not
+
+    #np.ufunc(a, b)
+    add
+    subtract
+    multiply
+    divide/floor_divide
+    power
+    maximum, fmax
+    minimum, fmin
+    mod
+    copysign
+    greater/greater_equal
+    less/less_equal
+    equal/not_equal
+    logical_and/logical_or
+    logical_xor
+
+    # functions for bool
+    any()
+    all()
+
+    # functions for set
+    unique(x)
+    intersect1d(x, y)                   # in both x and y
+    union1d(x, y)                       # in x or y
+    in1d(x, y)                          # bool arrary than x[i] in y
+    setdiff1d(x, y)                     # in x and not in y
+    setxor1d(x, y)                      # only in x or only in y
+
+    #function for statistics
     a.sum()                             # sum of all values
     a.sum(axis=0)                       # sum of each axis
     a.min()
     a.max()
+    a.mean()                            # average
+    a.std()     
+    a.argmin()                          # index of min
+    a.argmax()                          # index of max
+    a.cumsum()                          # 累计和
+    a.cumprod()                         # 累计积
 
+    # examples
+    (a > 0).sum()                       # number of element which is greater than 0
     np.add(a, b)
-    np.sqrt(a)
 
     for row in b:
     for element in b.flat:
@@ -132,22 +280,29 @@ Examples::
 
     b = np.sort(a)
 
-.. note::
-    reshape and slice only return new view of the array, but not copied the data.
-    change the new view will change the sharing data buffer. If you want to copy
-    data, copy() is required.
-    ``d = a.copy()``
 
-Data types
-~~~~~~~~~~
+Data input and output
+~~~~~~~~~~~~~~~~~~~~~
 
-https://docs.scipy.org/doc/numpy-1.10.1/user/basics.types.html
+https://docs.scipy.org/doc/numpy-1.10.1/reference/routines.io.html
+
+::
+
+    np.save('filename.npy', a)               # save array a as filename.npy dat file
+    a = np.load('filename.npy')              # load filename.npy to array a
+
+    np.savez('filename.npz', a=arr_a, b=arr_b)  # save array arr_a and arr_b in one file as filename.npz
+    arch = np.load('filename.npy')              # load filename.npz to dictionary {'a': arr_a, 'b': arr_b}
+
+    np.savetxt('filename.txt', a, fmt='%4d', delimiter=' ', newline='\n', header='', footer='')
+    a = np.loadtxt('filename.txt', delimiter=',')
 
 
 Random sampling
 ~~~~~~~~~~~~~~~
 
 https://docs.scipy.org/doc/numpy-dev/reference/routines.random.html
+https://docs.scipy.org/doc/numpy-1.10.1/reference/routines.random.html#simple-random-data
 
 Examples::
 
@@ -347,6 +502,9 @@ Examples::
     s2['norm_1':'norm_3']       # raws from 'norm_1' to 'norm_3' (included)
     s2[['norm_1','norm_3']]     # raws 'norm_1' and 'norm_3'
 
+    data = pd.Series([1, 2.1, np.nan, None, '', 0])
+    data.isnull()       # only np.nan and None is null.
+
 
 DataFrame Operations
 ~~~~~~~~~~~~~~~~~~~~
@@ -426,9 +584,11 @@ Select rows by boolean vector   df[bool_vec]     DataFrame
 
 **Missing Data**
 
-    df1.dropna(how='any')
-    df1.fillna(value=5)
+    df1.dropna(how='all', axis=1)
+    df1.fillna(value=5, inplace=True)
+    df1.fillna({1:10, 2:20})  # 10 for column 1 and 20 for column 2
     pd.isnull(df1)
+    pd.notnull(df1)
 
 **Data alignment and arithmetic**::
 
