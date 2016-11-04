@@ -28,6 +28,7 @@ Configuration
     git config --global core.editor vim
     git config --global color.ui true
     git config --global merge.tool kdiff3 
+    git config --global pull.rebase true
 
     # For current user only
     git config --global alias.st status
@@ -48,3 +49,10 @@ Configuration
     git ls-remote <rempte-origin-url> refs/heads/master #remote head id
     git ls-remote ./ refs/heads/master                  #local head id
 
+
+git-extras
+----------
+
+Install: ``sudo apt-get install git-extras``
+
+Usage: https://github.com/tj/git-extras/blob/master/Commands.md
