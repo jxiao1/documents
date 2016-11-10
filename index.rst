@@ -178,6 +178,14 @@ See also other basics:
    docs/database/mangodb/mangodb-quickstart.rst
    docs/database/mangodb/mangodb-pymongo.rst
 
+.. toctree::
+   :caption: Wireless
+   :maxdepth: 1
+   :numbered:
+   :glob:
+
+   docs/wireless/wifi/wifi_commands.rst
+   docs/wireless/wwan/wwan_pppd.rst
 
 .. toctree::
    :caption: Panetration Test
