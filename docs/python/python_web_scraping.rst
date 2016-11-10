@@ -4,6 +4,27 @@ Python Web Scraping
 beautifulsoup
 -------------
 
+lxml
+----
+The lxml XML toolkit is a Pythonic binding for the C libraries libxml2 and libxslt.
+The speed is more fast than beautifulsoup.
+Maybe some problem in multi-thread, so it's better to use the multi-process.
+
+sudo apt-get install python-lxml
+sudo pip install cssselect
+
+Example::
+
+    from lxml.etree import HTML
+    import requests
+
+    url = 'https://segmentfault.com/'
+    res = requests.get(url)
+    page = HTML(res.text)
+    for title in page.cssselect('.title>a'):
+        #print(title.text.encode('UTF-8')) # For python2.7
+        print title.text                   # For python3.x
+
 
 urllib
 ------

@@ -26,13 +26,44 @@ Typical Structure
 virtualenv
 ----------
 
-::
+virtualenv + virtualenvwrapper::
 
     sudo pip install virtualenv
     sudo pip install virtualenvwrapper
 
 .. see also: [DOC] "Python Flask" => "Flask Beginner"
 
+[MAC OS] pyenv + pyenv-virtualenv::
+
+    brew install pyenv
+    brew install pyenvbrew install pyenv
+
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+    pyenv install -l
+    pyenv install 3.5.2
+    pyenv rehash
+
+    在任意目录， 如果想在这个目录及其子目录中使用不同的python版本
+    pyenv local 3.5.2
+    python --version  #should be 3.5.2
+    pyenv virtualenv 3.5.2 venv3
+    pyenv shell ven3
+    pyenv activate venv3
+
+    不建议使用 pyenv global， 可能对全局其他程序有影响。
+
+    pyenv:  安装切换不同的python版本，但是同一个版本还是共用一个python环境
+    virtualenv:   创建不同的python环境 （--python指定基于哪一个python版本，要求系统中先装好了对应版本）
+    virtualenvwrapper: 更加方便地创建和管理不同的virtualenv。
+    pyenv-virtualenv: 把virtualenv集成到pyenv中， 同时自带virtualenvwrapper 和autoenv 类似高阶管理功能。
+
+    如果系统已经自带多个python版本， 比如ubuntu16.04 自带python2 和python3,
+    或许virtualenv + virtualenvwrapper 足够。
+    如果还需要自己安装管理多个python版本，python环境, 比如 MacbootPro 2015上面，
+    那么 pyenv+pyenv-virtualenv 可能更适合。
 
 Coding Style
 ------------
@@ -64,18 +95,7 @@ Examples::
     pylint --rcfile=pylint.conf  xxx.py
     pylint --reports=n xxx.py
 
-
-**flake8**:
-https://pypi.python.org/pypi/flake8
-
-
-PEP8 Auto-convert tool:
-
-- autopep8: https://github.com/hhatto/autopep8
-- Google python: https://github.com/google/yapf
-
-
-**pep8**:
+**pep8(pycodestyle)**:
 
 https://pypi.python.org/pypi/pep8
 
@@ -83,6 +103,23 @@ sudo pip install pep8, and run it like this: ``pep8 <source-file>``.
 
 .. note::
     There is a pyflakes vim plugin: https://github.com/vim-scripts/pyflakes
+
+**flake8**:
+
+https://pypi.python.org/pypi/flake8
+
+豆瓣内部要求使用这个, Include Pyflakes + Pycodestyle + McCabe ... + other plugins。
+
+Code complexity::
+
+    flake8 --max-complexity 10 app.py  (#It's better not greater than 10)
+
+
+
+**PEP8 Auto-convert tool**:
+
+- autopep8: https://github.com/hhatto/autopep8
+- Google python: https://github.com/google/yapf
 
  
 Configuration
