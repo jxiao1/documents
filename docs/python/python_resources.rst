@@ -25,3 +25,6 @@ Python Learning Resources
 |
 | https://github.com/justmarkham/python-reference
 |
+
+| https://www.pythonsheets.com/
+|

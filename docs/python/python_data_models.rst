@@ -178,9 +178,14 @@ Examples::
 https://docs.python.org/2/library/string.html#custom-string-format_string
 
 Examples::
+    >>> '{}, {}, {}'.format('arg0', 'arg1', 'arg2')
+    'arg0, arg1, arg2'
 
     >>> '{0}, {1}, {2}'.format('arg0', 'arg1', 'arg2')
     'arg0, arg1, arg2'
+
+    >>> '{2}, {1}, {1}'.format('arg0', 'arg1', 'arg2')
+    'arg2, arg1, arg1'
 
     >>> '{0}, {arg1}, {arg2}'.format('arg0', arg1='arg1', arg2='arg2')
     'arg0, arg1, arg2'

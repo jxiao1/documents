@@ -29,6 +29,7 @@ Configuration
     git config --global color.ui true
     git config --global merge.tool kdiff3 
     git config --global pull.rebase true
+    git config --global commit.template "~/.gitmessage"
 
     # For current user only
     git config --global alias.st status
