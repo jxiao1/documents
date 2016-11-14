@@ -1,6 +1,8 @@
 unittest Quickstart
 ===================
 
+**pytest is better than the unittest standard library.**
+
 https://docs.python.org/2.7/library/unittest.html
 
 All test case methods must begin with test, and run in the order of name.

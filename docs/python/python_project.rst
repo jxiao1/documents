@@ -176,7 +176,6 @@ based on their docstrings. For an example of epydoc's output, see the
 A lightweight markup language called epytext can be used to format
 docstrings, and to add information about specific fields, such as
 parameters and instance variables. Epydoc also understands docstrings
-written in reStructuredText_, Javadoc, and plaintext.
 
 .. _API documentation for epydoc itself: http://epydoc.sourceforge.net/api/
 .. _reStructuredText: http://epydoc.sourceforge.net/othermarkup.html
@@ -204,7 +203,33 @@ Module 'setuptools'
 Continuous Integration
 ----------------------
 
+buildbot
+~~~~~~~~
+
 http://buildbot.net/
+
+Quick start::
+
+    sudo pip install buildbot
+    sudo pip install buildbot-www
+    sudo pip install buildbot-waterfall_view
+    sudo pip install buildbot-console_view
+    sudo pip install buildbot-worker
+
+    buildbot create-master /tmp/experimental_buildmaster
+    cp /tmp/experimental_buildmaster/master.cfg.sample /tmp/experimental_buildmaster/master.cfg
+    buildbot upgrade-master /tmp/experimental_buildmaster   # each time when change the conf file
+
+    # Check the worker name and password from master.cfg
+    buildbot-worker create-worker /tmp/experimental_buildslave localhost:9989 example-worker pass
+    buildbot-worker start /tmp/experimental_buildslave
+
+    firefox http://localhost:8010/ &
+    Builds => runtests => force => Input "Your name"(email) and click "Start Build"
+
+Jenkins
+~~~~~~~
+
 https://jenkins.io/index.html
 
 
