@@ -50,8 +50,11 @@ virtualenv + virtualenvwrapper::
     pyenv local 3.5.2
     python --version  #should be 3.5.2
     pyenv virtualenv 3.5.2 venv3
-    pyenv shell ven3
+    pyenv shell venv3
     pyenv activate venv3
+
+    pyenv virtualenv-delete venv3       # delete the virtualenv
+    pyenv <tab>                         # to show all sub commands
 
     不建议使用 pyenv global， 可能对全局其他程序有影响。
 
